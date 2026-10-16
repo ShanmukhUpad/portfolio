@@ -6,6 +6,28 @@ import { ProjectCard, type Project } from "@/components/ui/ProjectCard";
 
 const PROJECTS: Project[] = [
   {
+    title: "Urban AR GIS: Hand-Tracked 3D City Viewer",
+    description: [
+      "Built a webcam AR viewer where MediaPipe hand tracking lets users zoom, pan, and grab 973 3D campus buildings with gestures, with tracking on its own thread at about 30 FPS.",
+      "Wrote ModernGL/GLSL shaders for a 60 FPS renderer with Blinn-Phong lighting, gamma correction on high-resolution satellite imagery, and atmospheric haze.",
+    ],
+    tags: ["Python", "MediaPipe", "OpenCV", "ModernGL", "GLSL"],
+    github: "https://github.com/ShanmukhUpad/urban-ar-gis",
+    featured: true,
+    period: "Mar 2026",
+  },
+  {
+    title: "Off the Clock: Standalone VR Game",
+    description: [
+      "Virtual Reality course project. Built motion controls and a combat system for sword fighting, laser guns, and mech flight, using controller tracking data and sphere-cast sweeps so fast sword swings register hits reliably.",
+      "Tested Android builds on Meta Quest 3 against a 90 FPS target, adding an in-headset overlay for frame time, draw calls, and memory use to catch performance drops on the device.",
+      "Debugged laser effects that rendered on PC but disappeared in the headset, traced the cause to shaders that do not support single-pass stereo rendering, and replaced them with a compatible fallback.",
+    ],
+    tags: ["C#", "Unity XR", "OpenXR", "Meta Quest 3"],
+    featured: true,
+    period: "Apr 2026 – May 2026",
+  },
+  {
     title: "MAS Sycophancy: Hierarchical Multi-Agent LLM Failure",
     description: [
       "Demonstrated that hierarchical LLM agent topologies collapse under a single injected authority hallucination, driving a large sycophancy effect and 100% cascade by turn 3.",
@@ -49,10 +71,10 @@ const PROJECTS: Project[] = [
   {
     title: "Digital Diary (ACM SIG-CHI)",
     description: [
-      "Architected a full-stack interactive journaling platform across a 15-person team.",
-      "Built a context-aware guided mode integrating Google Calendar, National Weather Service, and Claude AI, plus a real-time computer vision pipeline for mood inference.",
+      "Built a real-time camera pipeline with OpenCV and MediaPipe that tracks face and hand landmarks from webcam video to detect mood and gesture controls, running as its own Docker service.",
+      "Led a 15-person team building a Next.js journaling app with a guided mode that pulls in Google Calendar, weather data, and Claude AI.",
     ],
-    tags: ["Next.js", "OpenCV", "Claude AI", "Google Calendar API", "TypeScript"],
+    tags: ["Next.js", "TypeScript", "OpenCV", "MediaPipe", "Claude AI"],
     github: "https://github.com/sigchi-uiuc/digital-diary",
     demo: "https://acm-sigchi-digitaldiary.org/",
     demoLabel: "Website",
@@ -102,7 +124,7 @@ export function Projects() {
             Projects
           </h2>
           <p className="text-sm mb-12" style={{ color: "var(--color-text-muted)" }}>
-            A selection of work spanning LLM-Research, urban analytics, HCI, and geospatial analysis.
+            A selection of work spanning computer vision, XR, LLM research, urban analytics, HCI, and geospatial analysis.
           </p>
         </ScrollReveal>
 

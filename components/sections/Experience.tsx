@@ -8,16 +8,28 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const EXPERIENCES: Experience[] = [
   {
+    role: "AI Intern",
+    company: "UIUC CyberGIS Lab",
+    location: "Urbana, IL",
+    period: "Sep 2026 – Present",
+    tags: ["Python", "LLM Agents", "Benchmarking", "User Testing"],
+    bullets: [
+      "Benchmarking the lab's geospatial AI agent on all 50 GeoAnalystBench tasks, where it matches published LLMs on code but plans more steps than the expert on 43 of 48 tasks.",
+      "Running user tests on the live agent across dataset search, map projections, raster data, file uploads, and adversarial prompts, and reporting 4 bugs that break core features.",
+      "Improving the agent's architecture, including how it picks tools, keeps its search index current, and runs code.",
+    ],
+  },
+  {
     role: "Undergraduate Researcher",
     company: "Semantic Segmentation Failure Analysis",
     location: "Urbana, IL",
     period: "May 2026 – Aug 2026",
     tags: ["Python", "PyTorch", "torchvision"],
     link: "https://github.com/ShanmukhUpad/semantic-segmentation-feature",
+    links: [{ href: "/label-free-detection.pdf", label: "Paper", download: true }],
     bullets: [
-      "Cut segmentation error from 51% to under 10% at 20% pixel coverage on unseen aerial imagery by engineering four label-free uncertainty signals that rank a model's own errors without ground truth.",
-      "Proved failure detection survives domain shift at 0.61–0.74 pixel AUROC across 4 datasets spanning 44 countries and 6 continents.",
-      "Diagnosed boundary and rare-class failure modes, roughly half the accuracy at class edges vs. interior regions, on a DeepLabV3-ResNet50 baseline, writing an IEEE-format paper and delivering a CyberGIS talk.",
+      "Trained a DeepLabV3-ResNet50 model on aerial imagery and built a tiled scanner that maps where it is likely wrong across full-size images, using only the model's own confidence and no labeled data.",
+      "Validated the error maps on 4 benchmark datasets, found the model is about half as accurate along object edges, and presented the work in an IEEE-format paper and a CyberGIS talk.",
     ],
   },
   {
@@ -55,25 +67,23 @@ const EXPERIENCES: Experience[] = [
     company: "ACM SIG-CHI",
     location: "Urbana, IL",
     period: "Sep 2025 – Apr 2026",
-    tags: ["TypeScript", "HTML/CSS", "Next.js", "OpenCV"],
+    tags: ["TypeScript", "Next.js", "Python", "OpenCV", "MediaPipe"],
     link: "https://acm-sigchi-digitaldiary.org/",
     bullets: [
-      "Architected and led development of a full-stack interactive journaling platform across a 15-person team.",
-      "Engineered a context-aware guided journal mode integrating Google Calendar, National Weather Service, and Claude AI to generate personalized daily reflection prompts.",
-      "Built a real-time computer vision pipeline to detect facial expressions for mood inference.",
+      "Built a real-time camera pipeline with OpenCV and MediaPipe that tracks face and hand landmarks from webcam video to detect mood and gesture controls, running as its own Docker service.",
+      "Led a 15-person team building a Next.js journaling app with a guided mode that pulls in Google Calendar, weather data, and Claude AI.",
     ],
   },
   {
-    role: "Software Engineer",
+    role: "Software Engineering Intern",
     company: "UIC Electronic Visualization Laboratory",
     location: "Chicago, IL",
     period: "Jun 2025 – Aug 2025",
     tags: ["Python", "Pandas", "TypeScript", "React"],
     link: "https://github.com/ShanmukhUpad/curio",
     bullets: [
-      "Cut data pipeline processing time by ~30% across hundreds of pipelines by engineering a merge tool built on Pandas for large-scale Chicago urban datasets.",
-      "Delivered a merge flow box feature for Curio, a visual data pipeline GUI, enabling researchers to combine large datasets directly within the interface.",
-      "Extended Curio's data pool component with multi-tab support, allowing simultaneous inspection of multiple merged datasets.",
+      "Built a Pandas merge tool that cut processing time by about 30% across hundreds of Chicago urban data pipelines.",
+      "Added dataset merging and multi-tab data views to Curio, a visual data-pipeline tool used by researchers.",
     ],
   },
 ];
