@@ -70,7 +70,7 @@ export function Education() {
                   Bachelor of Science in Computer Science &amp; Geographic Information Science
                 </p>
                 <p className="text-xs font-mono mt-1.5" style={{ color: "var(--color-text-faint)" }}>
-                  Planned: Master of Computer Science (MCS) · Fall 2027 – May 2028
+                  Planned: Master of Computer Science (MCS) · August 2027 – May 2028
                 </p>
               </div>
               <div className="text-right shrink-0">
