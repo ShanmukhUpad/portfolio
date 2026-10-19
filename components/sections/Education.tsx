@@ -11,7 +11,6 @@ const COURSEWORK = [
   "Virtual Reality",
   "Data Management in the Cloud",
   "Human-LLM Interaction",
-  "Deep Learning for Computer Vision",
   "Algorithms & Formal Models of Computation",
   "CyberGIS & Geospatial Data Science",
   "Intro to GIS I & II",
@@ -69,6 +68,9 @@ export function Education() {
                 </h3>
                 <p className="text-sm italic" style={{ color: "var(--color-text-muted)" }}>
                   Bachelor of Science in Computer Science &amp; Geographic Information Science
+                </p>
+                <p className="text-xs font-mono mt-1.5" style={{ color: "var(--color-text-faint)" }}>
+                  Planned: Master of Computer Science (MCS) · Fall 2027 – May 2028
                 </p>
               </div>
               <div className="text-right shrink-0">

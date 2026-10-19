@@ -8,7 +8,7 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const EXPERIENCES: Experience[] = [
   {
-    role: "AI Intern",
+    role: "Machine Learning Engineering Intern",
     company: "UIUC CyberGIS Lab",
     location: "Urbana, IL",
     period: "Sep 2026 – Present",
