@@ -15,6 +15,30 @@ const PROJECTS: Project[] = [
     period: "Oct 2026",
   },
   {
+    title: "Smash Ultimate Rankings Dashboard",
+    description: [
+      "Built an interactive dashboard comparing my ranking of all 89 fighters to the competitive tier list, with filters, bootstrap confidence intervals, and permutation tests.",
+      "Wrote unit tests for the statistics and build-time data validation, so a bad edit to the source data fails the build instead of skewing the charts.",
+    ],
+    tags: ["TypeScript", "Next.js", "Statistics"],
+    github: "https://github.com/ShanmukhUpad/Smash-Ultimate-Rankings",
+    demo: "https://shanmukhupad.github.io/Smash-Ultimate-Rankings/",
+    demoLabel: "Website",
+    period: "Sep 2026",
+  },
+  {
+    title: "Codebase Mapper",
+    description: [
+      "Built a live developer tool that turns any GitHub repo into an interactive dependency map, writing import resolvers for over a dozen languages including Go, Java, Python, and C++.",
+      "Added file explanations from a local LLM with a Claude API fallback and browser caching, wrapped in a Wii U-inspired interface with menu sound effects.",
+    ],
+    tags: ["TypeScript", "Next.js", "React", "Claude API"],
+    github: "https://github.com/ShanmukhUpad/Code-Atlas",
+    demo: "https://codebase-mapper.vercel.app",
+    demoLabel: "Website",
+    period: "Jul 2026",
+  },
+  {
     title: "Urban AR GIS: Hand-Tracked 3D City Viewer",
     description: [
       "Turned OpenStreetMap data for any latitude and longitude into a navigable 3D city by projecting building footprints to local meters with pyproj and triangulating them into 3D models.",
