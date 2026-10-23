@@ -64,13 +64,16 @@ export function About() {
             <ScrollReveal delay={0.1}>
               <p className="text-base leading-relaxed mb-6" style={{ color: "var(--color-text-muted)" }}>
                 I&apos;m a computer science + geography & GIS major at the University of Illinois
-                Urbana-Champaign, interested in building software that improves the efficiency of urban systems.
+                Urbana-Champaign, interested in building software that improves the efficiency of urban systems
+                via computer vision and augmented reality. I also plan to stay at UIUC for a Master of Computer
+                Science, starting in August 2027 and finishing in May 2028.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-base leading-relaxed mb-6" style={{ color: "var(--color-text-muted)" }}>
-                I serve as a Project Lead in ACM&apos;s Special Interest Groups for
-                both HCI and AI & Data Science.
+                I currently work as a Machine Learning Engineering Intern at the UIUC CyberGIS Lab, where I
+                benchmark and user-test the lab&apos;s geospatial AI agent and help improve how it plans and runs
+                analyses.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>

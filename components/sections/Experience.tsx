@@ -14,9 +14,9 @@ const EXPERIENCES: Experience[] = [
     period: "Sep 2026 – Present",
     tags: ["Python", "LLM Agents", "Benchmarking", "User Testing"],
     bullets: [
-      "Benchmarking the lab's geospatial AI agent on all 50 GeoAnalystBench tasks, where it matches published LLMs on code but plans more steps than the expert on 43 of 48 tasks.",
-      "Running user tests on the live agent across dataset search, map projections, raster data, file uploads, and adversarial prompts, and reporting 4 bugs that break core features.",
-      "Improving the agent's architecture, including how it picks tools, keeps its search index current, and runs code.",
+      "Benchmarking the lab's geospatial AI agent on all 50 GeoAnalystBench tasks, showing it matches published LLMs on code but plans more steps than the expert on 43 of 48 tasks.",
+      "Uncovering 4 bugs that break core features of the live agent by user-testing dataset search, map projections, raster data, file uploads, and adversarial prompts.",
+      "Reworking the agent's tool selection, search indexing, and code execution to target over-planning and bugs from testing.",
     ],
   },
   {

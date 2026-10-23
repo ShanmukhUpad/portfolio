@@ -6,12 +6,22 @@ import { ProjectCard, type Project } from "@/components/ui/ProjectCard";
 
 const PROJECTS: Project[] = [
   {
+    title: "Multi-Region Cloud Web Service",
+    description: [
+      "Cloud database course project. Deployed a Node.js and Express REST API on Firestore to Google Cloud servers in the US and Europe.",
+      "Quantified a 3 to 4 times slowdown in Europe by benchmarking latency in Python, since each request crossed the Atlantic twice, with 0 stale reads in 100 trials.",
+    ],
+    tags: ["Node.js", "Express", "Python", "Firestore", "Google Cloud"],
+    period: "Oct 2026",
+  },
+  {
     title: "Urban AR GIS: Hand-Tracked 3D City Viewer",
     description: [
+      "Turned OpenStreetMap data for any latitude and longitude into a navigable 3D city by projecting building footprints to local meters with pyproj and triangulating them into 3D models.",
       "Built a webcam AR viewer where MediaPipe hand tracking lets users zoom, pan, and grab 973 3D campus buildings with gestures, with tracking on its own thread at about 30 FPS.",
       "Wrote ModernGL/GLSL shaders for a 60 FPS renderer with Blinn-Phong lighting, gamma correction on high-resolution satellite imagery, and atmospheric haze.",
     ],
-    tags: ["Python", "MediaPipe", "OpenCV", "ModernGL", "GLSL"],
+    tags: ["Python", "MediaPipe", "OpenCV", "ModernGL", "GLSL", "pyproj", "Shapely"],
     github: "https://github.com/ShanmukhUpad/urban-ar-gis",
     featured: true,
     period: "Mar 2026",
@@ -96,6 +106,8 @@ const PROJECTS: Project[] = [
     title: "A Spatial Analysis of Walkability and Urban Form in the Chicago Metropolitan Area",
     description: [
       "Contributed a new EPA-derived walkability score variable to ChiVes, a geospatial urban analytics platform for the Chicago metro area",
+      "Modeled walkability from urban form with an R regression (R² = 0.85).",
+      "Showed that mixed land use and street connectivity, not population density, drive walkability by mapping spatial clusters with Moran's I, and presented the findings at the UIUC Undergraduate Research Symposium.",
       "Cleaned and transformed raw EPA walk score data using R's sf library into publication-ready spatial measures with improved geographic precision",
     ],
     tags: ["R", "sf", "Spatial Analysis", "ChiVes"],
