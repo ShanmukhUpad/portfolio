@@ -30,7 +30,8 @@ const PROJECTS: Project[] = [
     title: "Codebase Mapper",
     description: [
       "Built a live developer tool that turns any GitHub repo into an interactive dependency map, writing import resolvers for over a dozen languages including Go, Java, Python, and C++.",
-      "Added file explanations from a local LLM with a Claude API fallback and browser caching, wrapped in a Wii U-inspired interface with menu sound effects.",
+      "Generated plain-language explanations of each file with the Claude API, caching them in the browser so every file is only explained once, all wrapped in a Wii U-inspired interface with menu sound effects.",
+      "Helped developers grasp large codebases faster than browsing a file tree by mapping how every file connects in one interactive graph.",
     ],
     tags: ["TypeScript", "Next.js", "React", "Claude API"],
     github: "https://github.com/ShanmukhUpad/Code-Atlas",
