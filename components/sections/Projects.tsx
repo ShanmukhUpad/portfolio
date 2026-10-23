@@ -70,8 +70,8 @@ const PROJECTS: Project[] = [
   {
     title: "Pathway to Improved Cities (ACM SIG-AIDA)",
     description: [
-      "Led a team of 8 building ensemble ML models that predict urban hardship, crime hotspots, crash risk, and transit accessibility across 77 Chicago community areas.",
-      "Shipped an interactive Streamlit + Mapbox GL dashboard with choropleth maps, density heatmaps, and LISA cluster visualizations for city planning decisions.",
+      "Led an 8-person team building a Streamlit and Mapbox GL dashboard that turns any uploaded urban dataset into on-demand maps and Random Forest and Gradient Boosting predictions.",
+      "Made model errors and spatial patterns easy to spot across 6 urban domains with automated data validation, LISA hot-spot analysis, and actual vs. predicted map views.",
     ],
     tags: ["Python", "Sci-Kit Learn", "GeoPandas", "Streamlit", "Mapbox GL", "SODA API"],
     github: "https://github.com/ShanmukhUpad/Pathway-To-Improved-Cities",

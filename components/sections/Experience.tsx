@@ -56,10 +56,9 @@ const EXPERIENCES: Experience[] = [
     tags: ["Python", "Sci-Kit Learn", "GeoPandas", "Streamlit", "Mapbox GL"],
     link: "https://github.com/ShanmukhUpad/Pathway-To-Improved-Cities",
     bullets: [
-      "Led a team of 8 to develop ensemble ML models (Random Forest, Gradient Boosting) predicting urban hardship, crime hotspots, crash risk, and transit accessibility across 77 Chicago community areas.",
-      "Built a live data pipeline integrating the Chicago Data Portal SODA API and Global/Local Moran's I (LISA) spatial autocorrelation analysis across six urban domains.",
-      "Developed an interactive Streamlit + Mapbox GL dashboard featuring choropleth maps, density heatmaps, and LISA cluster visualizations for city planning decisions.",
-      "Engineered an urban domain-aware file upload system with automated validation, spatial mapping, and on-demand ML prediction.",
+      "Led an 8-person team building a Streamlit and Mapbox GL dashboard that turns any uploaded urban dataset into on-demand maps and Random Forest and Gradient Boosting predictions.",
+      "Made model errors and spatial patterns easy to spot across 6 urban domains by engineering automated data validation, Moran's I and LISA hot-spot analysis, and actual vs. predicted map views.",
+      "Built a live pipeline that pulls open city data through the SODA API, so the models and maps stay current without manual downloads.",
     ],
   },
   {
