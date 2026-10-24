@@ -8,8 +8,8 @@ const PROJECTS: Project[] = [
   {
     title: "Multi-Region Cloud Web Service",
     description: [
-      "Cloud database course project. Deployed a Node.js and Express REST API on Firestore to Google Cloud servers in the US and Europe.",
-      "Quantified a 3 to 4 times slowdown in Europe by benchmarking latency in Python, since each request crossed the Atlantic twice, with 0 stale reads in 100 trials.",
+      "Deployed a Node.js and Express REST API on Firestore to Google Cloud servers in the US and Europe (cloud database course project)",
+      "Measured a 3 to 4x latency penalty in Europe from cross-Atlantic database calls, with 0 stale reads across 100 consistency trials, by benchmarking in Python",
     ],
     tags: ["Node.js", "Express", "Python", "Firestore", "Google Cloud"],
     period: "Oct 2026",
@@ -17,8 +17,8 @@ const PROJECTS: Project[] = [
   {
     title: "Smash Ultimate Rankings Dashboard",
     description: [
-      "Built an interactive dashboard comparing my ranking of all 89 fighters to the competitive tier list, with filters, bootstrap confidence intervals, and permutation tests.",
-      "Wrote unit tests for the statistics and build-time data validation, so a bad edit to the source data fails the build instead of skewing the charts.",
+      "Shipped an interactive dashboard comparing my ranking of all 89 fighters to the competitive tier list, with bootstrap confidence intervals and permutation tests",
+      "Kept bad data out of the charts with unit-tested statistics and build-time data validation",
     ],
     tags: ["TypeScript", "Next.js", "Statistics"],
     github: "https://github.com/ShanmukhUpad/Smash-Ultimate-Rankings",
@@ -29,9 +29,9 @@ const PROJECTS: Project[] = [
   {
     title: "Codebase Mapper",
     description: [
-      "Built a live developer tool that turns any GitHub repo into an interactive dependency map, writing import resolvers for over a dozen languages including Go, Java, Python, and C++.",
-      "Generated plain-language explanations of each file with the Claude API, caching them in the browser so every file is only explained once, all wrapped in a Wii U-inspired interface with menu sound effects.",
-      "Helped developers grasp large codebases faster than browsing a file tree by mapping how every file connects in one interactive graph.",
+      "Built a live developer tool that turns any GitHub repo into an interactive dependency graph, with import resolvers for 12+ languages (Go, Java, Python, C++)",
+      "Generated per-file explanations with the Claude API, cached in the browser so each file is explained once, in a Wii U-inspired interface",
+      "Made large codebases faster to understand than a file tree by visualizing how every file connects",
     ],
     tags: ["TypeScript", "Next.js", "React", "Claude API"],
     github: "https://github.com/ShanmukhUpad/Code-Atlas",
@@ -42,9 +42,9 @@ const PROJECTS: Project[] = [
   {
     title: "Urban AR GIS: Hand-Tracked 3D City Viewer",
     description: [
-      "Turned OpenStreetMap data for any latitude and longitude into a navigable 3D city by projecting building footprints to local meters with pyproj and triangulating them into 3D models.",
-      "Built a webcam AR viewer where MediaPipe hand tracking lets users zoom, pan, and grab 973 3D campus buildings with gestures, with tracking on its own thread at about 30 FPS.",
-      "Wrote ModernGL/GLSL shaders for a 60 FPS renderer with Blinn-Phong lighting, gamma correction on high-resolution satellite imagery, and atmospheric haze.",
+      "Built a gesture-controlled 3D city viewer with MediaPipe hand tracking (clench to zoom, point to pan, grab to move buildings)",
+      "Kept real-time rendering smooth by running hand tracking on a separate thread from the ModernGL renderer",
+      "Generated 3D cities from OpenStreetMap footprints projected with pyproj, with GLSL lighting and haze over satellite imagery",
     ],
     tags: ["Python", "MediaPipe", "OpenCV", "ModernGL", "GLSL", "pyproj", "Shapely"],
     github: "https://github.com/ShanmukhUpad/urban-ar-gis",
@@ -54,9 +54,9 @@ const PROJECTS: Project[] = [
   {
     title: "Off the Clock: Standalone VR Game",
     description: [
-      "Virtual Reality course project. Built motion controls and a combat system for sword fighting, laser guns, and mech flight, using controller tracking data and sphere-cast sweeps so fast sword swings register hits reliably.",
-      "Tested Android builds on Meta Quest 3 against a 90 FPS target, adding an in-headset overlay for frame time, draw calls, and memory use to catch performance drops on the device.",
-      "Debugged laser effects that rendered on PC but disappeared in the headset, traced the cause to shaders that do not support single-pass stereo rendering, and replaced them with a compatible fallback.",
+      "Built VR combat for sword fighting, laser guns, and mech flight in Unity XR, using sphere-cast sweeps so fast swings register reliably (VR course project)",
+      "Held Meta Quest 3 builds to a 90 FPS target with an in-headset profiling overlay for frame time, draw calls, and memory",
+      "Fixed laser effects missing in the headset by replacing shaders that lacked single-pass stereo support",
     ],
     tags: ["C#", "Unity XR", "OpenXR", "Meta Quest 3"],
     featured: true,
@@ -65,9 +65,9 @@ const PROJECTS: Project[] = [
   {
     title: "MAS Sycophancy: Hierarchical Multi-Agent LLM Failure",
     description: [
-      "Demonstrated that hierarchical LLM agent topologies collapse under a single injected authority hallucination, driving a large sycophancy effect and 100% cascade by turn 3.",
-      "Quantified the failure without an LLM judge, using three independent signals (stance flips, planning errors, and deference language), each completely absent in the uninjected baseline.",
-      "Showed that explicit anti-sycophancy prompting fails to prevent collapse, co-authoring an ACL-format paper on the resulting \"Yes-Man\" failure mode.",
+      "Showed one injected false claim cascades to 100% of agents in hierarchical LLM agentic workflows by turn 3",
+      "Measured the failure without an LLM judge using stance flips, planning errors, and deference language",
+      "Found anti-sycophancy prompting fails to prevent collapse, and co-authored an ACL-format paper on the \"Yes-Man\" failure mode",
     ],
     tags: ["Python", "Concordia", "Vertex AI"],
     github: "https://github.com/VelupallyG/mas-sycophancy",
@@ -78,9 +78,9 @@ const PROJECTS: Project[] = [
   {
     title: "Spatial Autocorrelation of AI Data Centers",
     description: [
-      "Proved 5 statistically significant hyperscale-impact effects vanish under a spatial-lag model, contrasting OLS-with-state-fixed-effects against GM_Lag across 3,220 U.S. counties.",
-      "Surfaced a 34-county Northern Virginia electricity-price hot spot invisible to national statistics via bivariate global Moran's I and LISA across 5 impact variables.",
-      "Fused 12 datasets on hyperscale locations, home values, utility prices, drought, and air quality into a Python spatial-regression pipeline.",
+      "Showed 5 significant data center impact effects vanish under a spatial-lag model vs. OLS with state fixed effects across U.S. counties",
+      "Surfaced a Northern Virginia electricity-price hot spot invisible to national statistics with bivariate Moran's I and LISA",
+      "Fused 12 datasets (data center sites, home values, utility prices, drought, air quality) into a Python spatial-regression pipeline",
     ],
     tags: ["Python", "GeoPandas", "libpysal", "esda", "spreg"],
     period: "Mar 2026 – May 2026",
@@ -95,8 +95,8 @@ const PROJECTS: Project[] = [
   {
     title: "Pathway to Improved Cities (ACM SIG-AIDA)",
     description: [
-      "Led an 8-person team building a Streamlit and Mapbox GL dashboard that turns any uploaded urban dataset into on-demand maps and Random Forest and Gradient Boosting predictions.",
-      "Made model errors and spatial patterns easy to spot across 6 urban domains with automated data validation, LISA hot-spot analysis, and actual vs. predicted map views.",
+      "Led an 8-person team building a Streamlit and Mapbox GL dashboard that turns any uploaded urban dataset into on-demand maps and Random Forest and Gradient Boosting predictions",
+      "Surfaced model errors and spatial patterns across 6 urban domains with automated data validation, LISA hot-spot analysis, and actual vs. predicted maps",
     ],
     tags: ["Python", "Sci-Kit Learn", "GeoPandas", "Streamlit", "Mapbox GL", "SODA API"],
     github: "https://github.com/ShanmukhUpad/Pathway-To-Improved-Cities",
@@ -106,8 +106,8 @@ const PROJECTS: Project[] = [
   {
     title: "Digital Diary (ACM SIG-CHI)",
     description: [
-      "Built a real-time camera pipeline with OpenCV and MediaPipe that tracks face and hand landmarks from webcam video to detect mood and gesture controls, running as its own Docker service.",
-      "Led a 15-person team building a Next.js journaling app with a guided mode that pulls in Google Calendar, weather data, and Claude AI.",
+      "Built real-time, hands-free mood logging from webcam video via MediaPipe hand landmarks and face blendshapes",
+      "Led a 15-person team shipping a Next.js journaling app integrating mood detection, Claude API, and Google Calendar",
     ],
     tags: ["Next.js", "TypeScript", "OpenCV", "MediaPipe", "Claude AI"],
     github: "https://github.com/sigchi-uiuc/digital-diary",
@@ -119,8 +119,8 @@ const PROJECTS: Project[] = [
   {
     title: "PlantRoute",
     description: [
-      "HackIllinois: XGBoost model generating personalized low-carbon travel itineraries, balancing vacation preferences with emissions reduction",
-      "Fused Google Maps, Supermemory, and Gemini APIs with a Leaflet globe visualization",
+      "Built an XGBoost model at HackIllinois that generates personalized low-carbon travel itineraries, balancing trip preferences with emissions",
+      "Integrated Google Maps, Supermemory, and Gemini APIs with a Leaflet globe visualization",
     ],
     tags: ["Next.js", "TypeScript", "XGBoost", "Prisma ORM", "Leaflet", "Gemini API"],
     github: "https://github.com/groversomanshi/PlantRoute",
@@ -130,10 +130,9 @@ const PROJECTS: Project[] = [
   {
     title: "A Spatial Analysis of Walkability and Urban Form in the Chicago Metropolitan Area",
     description: [
-      "Contributed a new EPA-derived walkability score variable to ChiVes, a geospatial urban analytics platform for the Chicago metro area",
-      "Modeled walkability from urban form with an R regression (R² = 0.85).",
-      "Showed that mixed land use and street connectivity, not population density, drive walkability by mapping spatial clusters with Moran's I, and presented the findings at the UIUC Undergraduate Research Symposium.",
-      "Cleaned and transformed raw EPA walk score data using R's sf library into publication-ready spatial measures with improved geographic precision",
+      "Added an EPA-derived walkability measure to ChiVes, a geospatial analytics platform for the Chicago metro area",
+      "Modeled walkability from urban form with an R regression (R² = 0.85)",
+      "Showed mixed land use and street connectivity, not population density, drive walkability via Moran's I cluster mapping, and presented at the UIUC Undergraduate Research Symposium",
     ],
     tags: ["R", "sf", "Spatial Analysis", "ChiVes"],
     demo: "https://shanmukhupad.github.io/chicago-walkability/",
