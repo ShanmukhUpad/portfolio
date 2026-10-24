@@ -14,7 +14,8 @@ const EXPERIENCES: Experience[] = [
     period: "Sep 2026 – Present",
     tags: ["Python", "LLM Agents", "Benchmarking", "User Testing"],
     bullets: [
-      "Benchmarking the lab's LLM-based geospatial agent on GeoAnalystBench (48/50 tasks solved, over-planning on 43/48) and identifying flawed expert ground truth that skews LLM scoring",
+      "Testing and improving I-GUIDE's geospatial AI agent, an LLM system that writes and runs GIS code for researchers from plain-language requests",
+      "Benchmarking the agent on GeoAnalystBench (48/50 tasks solved, over-planning on 43/48) and identifying flawed expert ground truth that skews LLM scoring",
       "Uncovering 2 silent failure modes, partial file reads and wrong CRS units causing a 10x area error, by designing trap datasets with known answers",
       "Validating the agent end to end by rebuilding my SIG-AIDA ML analysis through it, matching 21 of 23 outputs (R², MAE, feature importance, Moran's I)",
       "Reworking tool selection, search indexing, and code execution to reduce the over-planning and failures found in testing",
