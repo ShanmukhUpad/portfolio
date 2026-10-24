@@ -6,6 +6,17 @@ import { ProjectCard, type Project } from "@/components/ui/ProjectCard";
 
 const PROJECTS: Project[] = [
   {
+    title: "Street-to-3D: Visual Odometry & 3D Mapping",
+    description: [
+      "Building a monocular visual odometry pipeline in C++ for camera localization, cutting trajectory drift from 33% to 13% on the KITTI benchmark with keyframe selection, 5-point RANSAC pose estimation, and triangulation",
+      "Generalizing to an unseen KITTI sequence at 3.6% drift with no retuning, verified by a trajectory evaluation suite (ATE, RPE, Sim(3) alignment) that matches the open-source evo toolkit",
+      "Calibrating cameras with OpenCV to recover intrinsics within 0.2 px in synthetic tests, the first stage of a phone-video-to-3D-map pipeline",
+    ],
+    tags: ["C++", "OpenCV", "Eigen", "Python", "Visual Odometry", "Multi-View Geometry"],
+    featured: true,
+    period: "Oct 2026 – Present",
+  },
+  {
     title: "Multi-Region Cloud Web Service",
     description: [
       "Deployed a Node.js and Express REST API on Firestore to Google Cloud servers in the US and Europe (cloud database course project)",
@@ -115,6 +126,17 @@ const PROJECTS: Project[] = [
     demoLabel: "Website",
     featured: true,
     period: "Sep 2025 – Apr 2026",
+  },
+  {
+    title: "Media Review",
+    description: [
+      "Let users search, review, and track games, movies, and TV shows in one place by integrating the IGDB, Twitch, and IMDb APIs",
+      "Linked Steam, PlayStation, and Xbox accounts through OAuth so game playtime updates live on a user's profile",
+      "Built the PostgreSQL backend for reviews, lists, favorites, friends, and progress tracking as the main backend developer on a team of 4",
+    ],
+    tags: ["TypeScript", "Next.js", "PostgreSQL", "OAuth", "REST APIs"],
+    github: "https://github.com/CS222-UIUC/fa25-fa25-team001",
+    period: "Sep 2025 – Dec 2025",
   },
   {
     title: "PlantRoute",

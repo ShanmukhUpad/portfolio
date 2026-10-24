@@ -7,6 +7,9 @@ import { TagBadge } from "@/components/ui/TagBadge";
 import { ChevronDown } from "@/components/ui/icons";
 
 const COURSEWORK = [
+  "Computational Photography (Planned)",
+  "Computer Vision (Planned)",
+  "Autonomous Vehicle System Engineering (Planned)",
   "Spatial Analysis",
   "Virtual Reality",
   "Data Management in the Cloud",

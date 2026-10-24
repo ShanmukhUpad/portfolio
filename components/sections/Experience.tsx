@@ -32,7 +32,7 @@ const EXPERIENCES: Experience[] = [
     bullets: [
       "Trained a DeepLabV3-ResNet50 semantic segmentation model in PyTorch on aerial imagery, and wrote an IEEE-format paper presented at a CyberGIS talk",
       "Diagnosed failure modes through boundary, class, and confidence analysis, finding 2x lower IoU near class edges and high confidence on misclassified pixels",
-      "Cut the error rate from 51% to under 10% on unseen German imagery by building label-free uncertainty scoring (entropy, margin, confidence) to filter unreliable pixels",
+      "Cut the error rate from 51% to under 10% on unseen imagery by building label-free uncertainty scoring (entropy, margin, confidence) to filter unreliable pixels",
       "Built a sliding-window inference tool generating full-resolution uncertainty maps to rank images for review",
     ],
   },
@@ -73,7 +73,7 @@ const EXPERIENCES: Experience[] = [
     tags: ["TypeScript", "Next.js", "Python", "OpenCV", "MediaPipe"],
     link: "https://acm-sigchi-digitaldiary.org/",
     bullets: [
-      "Built real-time, hands-free mood logging from webcam video via MediaPipe hand landmarks and thumb angle",
+      "Built real-time, hands-free mood logging from webcam video via MediaPipe hand landmark tracking and thumb angle",
       "Added facial-expression mood detection from MediaPipe face blendshapes (smile, frown, brow, cheek)",
       "Led a 15-person team shipping a Next.js journaling app integrating mood detection, Claude API, Google Calendar, and weather data",
     ],

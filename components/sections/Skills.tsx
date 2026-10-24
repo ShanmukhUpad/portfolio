@@ -6,6 +6,14 @@ import { Code, Globe, Layers, Library } from "@/components/ui/icons";
 
 const SKILL_GROUPS = [
   {
+    category: "Computer Vision Methods",
+    icon: Layers,
+    skills: [
+      "Visual Odometry", "Multi-View Geometry", "Camera Calibration", "Semantic Segmentation",
+      "Uncertainty Estimation", "Landmark Tracking", "Trajectory Evaluation (ATE / RPE)",
+    ],
+  },
+  {
     category: "Languages",
     icon: Code,
     skills: ["TypeScript", "Python", "HTML/CSS", "C++", "C", "R", "JavaScript", "C#", "Java", "SQL"],
@@ -33,6 +41,7 @@ const SKILL_GROUPS = [
     skills: [
       "PyTorch",
       "torchvision",
+      "Eigen",
       "TensorFlow",
       "Sci-Kit Learn",
       "XGBoost",
