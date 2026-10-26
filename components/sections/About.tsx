@@ -26,9 +26,7 @@ export function About() {
             staying for a Master of Computer Science through May 2028.
           </p>
           <p className="mb-5">
-            I grew up in Naperville, spent a year at UIC in Chicago, and transferred to Urbana in fall 2025. Most of
-            what I build sits where cities meet computers: computer vision on aerial imagery, spatial statistics on
-            city data, and AR you steer with your hands.
+            I grew up in Naperville, spent a year at UIC in Chicago, and transferred to Urbana in fall 2025.
           </p>
           <p>
             Right now I&apos;m a machine learning engineering intern at the UIUC CyberGIS Lab, testing a geospatial

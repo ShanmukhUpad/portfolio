@@ -66,9 +66,16 @@ const EXPERIENCES: Role[] = [
       "Predicted which bias fix would work by tracing the gap to a ranking deficit, not a threshold artifact, via per-group ROC AUC across 8,312 inspections",
       "Rebuilt the City's inspection forecasting pipeline on 2018-present data and clustered neighborhoods into 3 typologies with k-means and Ward clustering",
     ],
+    image: {
+      src: "projects/bias-reduction-fixes.webp",
+      alt: "Bar chart of the recall gap after each fix: 0.125 for the stock model, 0.119 with the custom loss, 0.001 with per-group thresholds",
+      caption: "Recall gap between neighborhood groups after each fix, at a fair operating point.",
+      width: 790,
+      height: 440,
+    },
   },
   {
-    role: "Project Lead, Data Scientist & GI Scientist",
+    role: "Project Lead",
     company: "Pathway to Improved Cities (ACM SIG-AIDA)",
     location: "Urbana, IL",
     period: "Feb 2026 – May 2026",
@@ -79,6 +86,13 @@ const EXPERIENCES: Role[] = [
       "Surfaced model errors and spatial patterns across 6 urban domains with automated data validation, Moran's I and LISA hot-spot analysis, and actual vs. predicted maps",
       "Kept models and maps current with a live SODA API data pipeline",
     ],
+    image: {
+      src: "projects/pathway-lisa.webp",
+      alt: "The dashboard's spatial autocorrelation panel: Moran's I of 0.31, a Moran scatterplot and a LISA cluster map of Chicago community areas",
+      caption: "The dashboard's crime hot-spot analysis: global Moran's I and a LISA cluster map of Chicago.",
+      width: 1600,
+      height: 1150,
+    },
   },
   {
     role: "Project Lead & Software Engineer",
@@ -92,9 +106,16 @@ const EXPERIENCES: Role[] = [
     ],
     bullets: [
       "Built real-time, hands-free mood logging from webcam video via MediaPipe hand landmark tracking and thumb angle",
-      "Added facial-expression mood detection from MediaPipe face blendshapes (smile, frown, brow, cheek)",
+      "Added facial-expression mood detection from MediaPipe face blendshapes",
       "Led a 15-person team shipping a Next.js journaling app integrating mood detection, Claude API, Google Calendar, and weather data",
     ],
+    image: {
+      src: "projects/digital-diary.webp",
+      alt: "Digital Diary's journal page with mood-tagged entries and a calendar of days with entries",
+      caption: "The journal view, shown with sample entries on a local copy.",
+      width: 1600,
+      height: 1000,
+    },
   },
   {
     role: "Software Engineering Intern",

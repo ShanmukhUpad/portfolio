@@ -16,14 +16,16 @@ const COURSEWORK = [
 
 const PLANNED = ["Computational Photography", "Computer Vision", "Autonomous Vehicle System Engineering"];
 
-const FIGURES = [
+const DEGREES = [
   {
-    figure: "3.95",
-    text: "GPA in the B.S. in Computer Science & Geographic Information Science, finishing May 2027.",
+    degree: "B.S. in Computer Science & Geographic Information Science",
+    detail: "GPA 3.95 / 4.0",
+    dates: "Aug 2024 – May 2027",
   },
   {
-    figure: "2028",
-    text: "The year I finish the Master of Computer Science, also at Illinois, starting August 2027.",
+    degree: "Master of Computer Science (planned)",
+    detail: "",
+    dates: "Aug 2027 – May 2028",
   },
 ];
 
@@ -31,25 +33,23 @@ export function Education() {
   return (
     <section id="education" className="section-gap bg-wash">
       <div className="frame">
-        <h2 data-reveal className="font-display font-bold text-4xl md:text-5xl tracking-tight mb-3">
+        <h2 data-reveal className="font-display font-bold text-4xl md:text-5xl tracking-tight mb-8 md:mb-10">
           Education
         </h2>
-        <p data-reveal style={{ "--i": 1 } as React.CSSProperties} className="text-xl md:text-2xl mb-14 md:mb-20">
-          University of Illinois Urbana-Champaign
-        </p>
 
-        <div className="grid gap-12 md:grid-cols-2 md:gap-8 mb-16 md:mb-24">
-          {FIGURES.map((f, i) => (
-            <div key={f.figure} data-reveal style={{ "--i": i + 2 } as React.CSSProperties}>
-              <p
-                className="tabular font-display font-bold text-accent"
-                style={{ fontSize: "clamp(3.5rem, 6.4vw, 5.75rem)", lineHeight: 1, letterSpacing: "-0.04em" }}
-              >
-                {f.figure}
-              </p>
-              <p className="mt-5 max-w-[34ch] text-lg">{f.text}</p>
-            </div>
-          ))}
+        <div data-reveal style={{ "--i": 1 } as React.CSSProperties} className="mb-12 md:mb-16">
+          <h3 className="font-display font-semibold text-2xl mb-4">University of Illinois Urbana-Champaign</h3>
+          <ul className="flex flex-col gap-3">
+            {DEGREES.map((d) => (
+              <li key={d.degree} className="flex flex-col gap-x-6 md:flex-row md:items-baseline md:justify-between">
+                <span>
+                  {d.degree}
+                  {d.detail && <span className="text-ink-soft"> · {d.detail}</span>}
+                </span>
+                <span className="tabular text-base text-ink-soft">{d.dates}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="grid gap-10 md:grid-cols-12 md:gap-8">

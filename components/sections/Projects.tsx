@@ -69,9 +69,9 @@ const PROJECTS: Project[] = [
     period: "Jul 2026",
     year: "2026",
     description: [
-      "Built a live developer tool that turns any GitHub repo into an interactive dependency graph, with import resolvers for 12+ languages (Go, Java, Python, C++)",
-      "Generated per-file explanations with the Claude API, cached in the browser so each file is explained once, in a Wii U-inspired interface",
-      "Made large codebases faster to understand than a file tree by visualizing how every file connects",
+      "Developed a live developer tool that turns any GitHub repo into an interactive dependency map, with import resolvers for over a dozen languages including Go, Java, Python, and C++",
+      "Generated plain-language explanations of each file with the Claude API, caching them in the browser so every file is only explained once",
+      "Helped developers grasp large codebases faster than browsing a file tree by mapping how every file connects in one interactive graph",
     ],
     tools: ["TypeScript", "Next.js", "React", "Claude API"],
     links: [
@@ -96,6 +96,12 @@ const PROJECTS: Project[] = [
       "Fixed laser effects missing in the headset by replacing shaders that lacked single-pass stereo support",
     ],
     tools: ["C#", "Unity XR", "OpenXR", "Meta Quest 3"],
+    image: {
+      src: "projects/off-the-clock.webp",
+      alt: "In-headset view of Off the Clock: a laser pistol in one hand and a mech hovering in space ahead, with the player's stats and health bar",
+      width: 1600,
+      height: 868,
+    },
   },
   {
     title: "MAS Sycophancy: Hierarchical Multi-Agent LLM Failure",
@@ -112,6 +118,12 @@ const PROJECTS: Project[] = [
       { href: "/MAS-Sycophancy.pdf", label: "Paper", download: true },
       { href: "https://github.com/VelupallyG/mas-sycophancy", label: "GitHub", icon: "github" },
     ],
+    image: {
+      src: "projects/mas-contagion-tree.webp",
+      alt: "Three agent trees across turns: one injected false claim spreads from the top manager to 19 of 21 agents by turn 2 and all 21 by turn 3",
+      width: 1600,
+      height: 557,
+    },
   },
   {
     title: "Spatial Autocorrelation of AI Data Centers",
@@ -131,6 +143,12 @@ const PROJECTS: Project[] = [
         icon: "external",
       },
     ],
+    image: {
+      src: "projects/data-centers-lisa.webp",
+      alt: "Bivariate LISA map of U.S. counties: hyperscale data-center density against residential electricity price change, with high-high clusters in red",
+      width: 1600,
+      height: 871,
+    },
   },
   {
     title: "Urban AR GIS: Hand-Tracked 3D City Viewer",
@@ -159,6 +177,12 @@ const PROJECTS: Project[] = [
       { href: "https://tinyurl.com/44zy4ujm", label: "Demo", icon: "external" },
       { href: "https://github.com/groversomanshi/PlantRoute", label: "GitHub", icon: "github" },
     ],
+    image: {
+      src: "projects/plantroute-map.webp",
+      alt: "PlantRoute's world map with destination pins across North America, Europe and Asia",
+      width: 1600,
+      height: 1000,
+    },
   },
   {
     title: "Walkability and Urban Form in Chicago",
@@ -172,6 +196,12 @@ const PROJECTS: Project[] = [
     ],
     tools: ["R", "sf", "Spatial analysis", "ChiVes"],
     links: [{ href: "https://shanmukhupad.github.io/chicago-walkability/", label: "Website", icon: "external" }],
+    image: {
+      src: "projects/walkability-poster.webp",
+      alt: "Research symposium poster: walkability maps of Chicago by census tract, LISA clusters, a correlation matrix and the entropy-versus-walkability regression",
+      width: 2000,
+      height: 1500,
+    },
   },
   {
     title: "Media Review",
@@ -200,8 +230,7 @@ export function Projects() {
             Projects
           </h2>
           <p data-reveal style={{ "--i": 1 } as React.CSSProperties} className="max-w-[46ch] text-ink-soft">
-            Eleven builds from the last two years. The first three are shown in full; open any other row for what
-            it does and what it measured.
+            Eleven builds from the last two years, newest first.
           </p>
         </div>
 
