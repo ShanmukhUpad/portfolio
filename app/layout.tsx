@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Archivo_Narrow, Public_Sans, IBM_Plex_Mono } from "next/font/google";
+import Script from "next/script";
+import { Archivo_Narrow, Public_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { RevealObserver } from "@/components/ui/RevealObserver";
 
 const archivoNarrow = Archivo_Narrow({
   variable: "--font-archivo-narrow",
@@ -14,12 +16,6 @@ const publicSans = Public_Sans({
   variable: "--font-public-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-});
-
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -60,12 +56,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${archivoNarrow.variable} ${publicSans.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${archivoNarrow.variable} ${publicSans.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
+        {/* Gates the hidden starting states of the motion layer: no script, no hiding */}
+        <Script id="js-flag" strategy="beforeInteractive">
+          {`document.documentElement.classList.add('js')`}
+        </Script>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <RevealObserver />
       </body>
     </html>
   );

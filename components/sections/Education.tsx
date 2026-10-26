@@ -1,15 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { TagBadge } from "@/components/ui/TagBadge";
-import { ChevronDown } from "@/components/ui/icons";
-
 const COURSEWORK = [
-  "Computational Photography (Planned)",
-  "Computer Vision (Planned)",
-  "Autonomous Vehicle System Engineering (Planned)",
   "Spatial Analysis",
   "Virtual Reality",
   "Data Management in the Cloud",
@@ -25,131 +14,56 @@ const COURSEWORK = [
   "Linear Algebra",
 ];
 
-const INVOLVEMENT = [
-  { label: "ACM SIG-HCI", desc: "Project Lead" },
-  { label: "ACM SIG-AIDA", desc: "Project Lead" },
+const PLANNED = ["Computational Photography", "Computer Vision", "Autonomous Vehicle System Engineering"];
+
+const FIGURES = [
+  {
+    figure: "3.95",
+    text: "GPA in the B.S. in Computer Science & Geographic Information Science, finishing May 2027.",
+  },
+  {
+    figure: "2028",
+    text: "The year I finish the Master of Computer Science, also at Illinois, starting August 2027.",
+  },
 ];
 
 export function Education() {
-  const [courseOpen, setCourseOpen] = useState(false);
-
   return (
-    <section
-      id="education"
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-base)" }}
-    >
-      <div className="max-w-6xl mx-auto px-6">
-        <ScrollReveal>
-          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-signal-dim)" }}>
-            03 / education
-          </p>
-          <h2
-            className="font-display font-bold text-3xl sm:text-4xl mb-12"
-            style={{ color: "var(--color-text-primary)" }}
-          >
-            Education
-          </h2>
-        </ScrollReveal>
+    <section id="education" className="section-gap bg-wash">
+      <div className="frame">
+        <h2 data-reveal className="font-display font-bold text-4xl md:text-5xl tracking-tight mb-3">
+          Education
+        </h2>
+        <p data-reveal style={{ "--i": 1 } as React.CSSProperties} className="text-xl md:text-2xl mb-14 md:mb-20">
+          University of Illinois Urbana-Champaign
+        </p>
 
-        <ScrollReveal delay={0.1}>
-          <div
-            className="border p-6 sm:p-8"
-            style={{
-              borderRadius: 8,
-              backgroundColor: "var(--color-surface)",
-              borderColor: "var(--color-border)",
-            }}
-          >
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
-              <div>
-                <h3
-                  className="font-display font-bold text-xl mb-0.5"
-                  style={{ color: "var(--color-text-primary)" }}
-                >
-                  University of Illinois Urbana-Champaign
-                </h3>
-                <p className="text-sm italic" style={{ color: "var(--color-text-muted)" }}>
-                  Bachelor of Science in Computer Science &amp; Geographic Information Science
-                </p>
-                <p className="text-xs font-mono mt-1.5" style={{ color: "var(--color-text-faint)" }}>
-                  Planned: Master of Computer Science (MCS) · August 2027 – May 2028
-                </p>
-              </div>
-              <div className="text-right shrink-0">
-                <span
-                  className="block text-xs font-mono"
-                  style={{ color: "var(--color-text-faint)" }}
-                >
-                  Urbana, IL · May 2027
-                </span>
-                <span
-                  className="inline-flex mt-1.5 items-center px-2.5 py-1 text-sm font-bold border"
-                  style={{
-                    borderRadius: 6,
-                    borderColor: "var(--color-signal-dim)",
-                    color: "var(--color-signal)",
-                    backgroundColor: "var(--color-signal-tint)",
-                  }}
-                >
-                  GPA: 3.95 / 4.0
-                </span>
-              </div>
-            </div>
-
-            {/* Involvement */}
-            <div className="flex flex-wrap gap-2 mt-4 mb-5">
-              {INVOLVEMENT.map((item) => (
-                <div
-                  key={item.label}
-                  className="flex items-center gap-1.5 text-xs font-mono px-2.5 py-1 border"
-                  style={{
-                    borderRadius: 6,
-                    borderColor: "var(--color-border)",
-                    color: "var(--color-text-muted)",
-                    backgroundColor: "var(--color-elevated)",
-                  }}
-                >
-                  <span style={{ color: "var(--color-signal)" }}>{item.label}</span>
-                  <span style={{ color: "var(--color-text-faint)" }}>· {item.desc}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Coursework collapsible */}
-            <button
-              className="flex items-center gap-2 text-xs font-mono transition-colors duration-150 hover:text-[var(--color-text-primary)]"
-              style={{ color: "var(--color-text-muted)" }}
-              onClick={() => setCourseOpen((o) => !o)}
-            >
-              <motion.span
-                animate={{ rotate: courseOpen ? 180 : 0 }}
-                transition={{ duration: 0.2 }}
+        <div className="grid gap-12 md:grid-cols-2 md:gap-8 mb-16 md:mb-24">
+          {FIGURES.map((f, i) => (
+            <div key={f.figure} data-reveal style={{ "--i": i + 2 } as React.CSSProperties}>
+              <p
+                className="tabular font-display font-bold text-accent"
+                style={{ fontSize: "clamp(3.5rem, 8.2vw, 7.5rem)", lineHeight: 0.9, letterSpacing: "-0.03em" }}
               >
-                <ChevronDown size={13} />
-              </motion.span>
-              Relevant Coursework
-            </button>
+                {f.figure}
+              </p>
+              <p className="mt-5 max-w-[34ch] text-lg">{f.text}</p>
+            </div>
+          ))}
+        </div>
 
-            <AnimatePresence>
-              {courseOpen && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.25, ease: "easeInOut" }}
-                  className="overflow-hidden"
-                >
-                  <div className="flex flex-wrap gap-1.5 mt-3">
-                    {COURSEWORK.map((c) => (
-                      <TagBadge key={c} label={c} variant="muted" />
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+        <div className="grid gap-10 md:grid-cols-12 md:gap-8">
+          <div data-reveal className="md:col-span-4">
+            <h3 className="font-display font-semibold text-2xl mb-3">Clubs</h3>
+            <p>Project lead, ACM SIG-HCI</p>
+            <p>Project lead, ACM SIG-AIDA</p>
           </div>
-        </ScrollReveal>
+          <div data-reveal style={{ "--i": 1 } as React.CSSProperties} className="md:col-span-8">
+            <h3 className="font-display font-semibold text-2xl mb-3">Coursework</h3>
+            <p className="max-w-[68ch]">{COURSEWORK.join(", ")}.</p>
+            <p className="mt-3 max-w-[68ch] text-ink-soft">Next: {PLANNED.join(", ")}.</p>
+          </div>
+        </div>
       </div>
     </section>
   );

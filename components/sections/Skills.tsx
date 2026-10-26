@@ -1,133 +1,64 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { Code, Globe, Layers, Library } from "@/components/ui/icons";
-
 const SKILL_GROUPS = [
   {
-    category: "Computer Vision Methods",
-    icon: Layers,
+    category: "Computer vision",
     skills: [
-      "Visual Odometry", "Multi-View Geometry", "Camera Calibration", "Semantic Segmentation",
-      "Uncertainty Estimation", "Landmark Tracking", "Trajectory Evaluation (ATE / RPE)",
+      "Visual odometry", "Multi-view geometry", "Camera calibration", "Semantic segmentation",
+      "Uncertainty estimation", "Landmark tracking", "Trajectory evaluation (ATE / RPE)",
     ],
   },
   {
     category: "Languages",
-    icon: Code,
-    skills: ["TypeScript", "Python", "HTML/CSS", "C++", "C", "R", "JavaScript", "C#", "Java", "SQL"],
+    skills: ["TypeScript", "Python", "C++", "C", "R", "JavaScript", "C#", "Java", "SQL", "HTML/CSS"],
   },
   {
-    category: "Frameworks & Tools",
-    icon: Layers,
-    skills: [
-      "React", "Next.js", "Node.js", "Express", "Prisma ORM", "Streamlit", "OpenCV", "MediaPipe", "Pandas",
-      "ModernGL / GLSL", "Tailwind CSS", "Git", "Docker", "Linux", "Google Cloud", "Firestore", "MongoDB",
-      "Jupyter", "Unity XR", "Android", "Vercel", "LaTeX / Overleaf",
-    ],
-  },
-  {
-    category: "GIS Software",
-    icon: Globe,
+    category: "GIS",
     skills: [
       "ArcGIS Pro", "ArcGIS Online", "ArcGIS Field Maps", "ArcPy", "Mapbox GL", "Leaflet", "sf (R)",
       "GeoPandas", "Shapely", "pyproj", "PySAL", "LiDAR", "DEMs", "Georeferencing",
     ],
   },
   {
-    category: "ML & Data Libraries",
-    icon: Library,
+    category: "ML & data",
     skills: [
-      "PyTorch",
-      "torchvision",
-      "Eigen",
-      "TensorFlow",
-      "Sci-Kit Learn",
-      "XGBoost",
-      "NumPy",
-      "ESDA / libpysal",
-      "Matplotlib",
-      "Seaborn",
+      "PyTorch", "torchvision", "Eigen", "TensorFlow", "Scikit-learn", "XGBoost", "NumPy",
+      "ESDA / libpysal", "Matplotlib", "Seaborn",
+    ],
+  },
+  {
+    category: "Frameworks & tools",
+    skills: [
+      "React", "Next.js", "Node.js", "Express", "Prisma ORM", "Streamlit", "OpenCV", "MediaPipe", "Pandas",
+      "ModernGL / GLSL", "Tailwind CSS", "Git", "Docker", "Linux", "Google Cloud", "Firestore", "MongoDB",
+      "Jupyter", "Unity XR", "Android", "Vercel", "LaTeX",
     ],
   },
 ];
 
-const tagVariants = {
-  hidden: { opacity: 0, scale: 0.85 },
-  visible: (i: number) => ({
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.35, ease: "easeOut", delay: i * 0.03 },
-  }),
-};
-
 export function Skills() {
   return (
-    <section
-      id="skills"
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-base)" }}
-    >
-      <div className="max-w-6xl mx-auto px-6">
-        <ScrollReveal>
-          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-signal-dim)" }}>
-            05 / skills
-          </p>
-          <h2
-            className="font-display font-bold text-3xl sm:text-4xl mb-12"
-            style={{ color: "var(--color-text-primary)" }}
-          >
-            Skills
-          </h2>
-        </ScrollReveal>
+    <section id="skills" className="section-gap">
+      <div className="frame">
+        <h2 data-reveal className="font-display font-bold text-4xl md:text-5xl tracking-tight mb-12 md:mb-16">
+          Skills
+        </h2>
 
-        <div className="grid sm:grid-cols-2 gap-6">
-          {SKILL_GROUPS.map((group, gi) => {
-            const Icon = group.icon;
-            return (
-              <ScrollReveal key={group.category} delay={gi * 0.08}>
-                <div
-                  className="border p-6"
-                  style={{
-                    borderRadius: 8,
-                    backgroundColor: "var(--color-surface)",
-                    borderColor: "var(--color-border)",
-                  }}
-                >
-                  <div className="flex items-center gap-2 mb-4">
-                    <Icon size={15} style={{ color: "var(--color-signal)" }} />
-                    <h3 className="text-sm font-mono" style={{ color: "var(--color-signal)" }}>
-                      {group.category}
-                    </h3>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {group.skills.map((skill, si) => (
-                      <motion.span
-                        key={skill}
-                        custom={gi * 8 + si}
-                        variants={tagVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        className="inline-flex items-center px-2.5 py-1 text-xs font-mono border"
-                        style={{
-                          borderRadius: 6,
-                          backgroundColor: "var(--color-signal-tint)",
-                          color: "var(--color-signal)",
-                          borderColor: "var(--color-signal-dim)",
-                          opacity: 0.85,
-                        }}
-                      >
-                        {skill}
-                      </motion.span>
-                    ))}
-                  </div>
-                </div>
-              </ScrollReveal>
-            );
-          })}
-        </div>
+        <dl className="flex flex-col gap-10 md:gap-12">
+          {SKILL_GROUPS.map((group, i) => (
+            <div
+              key={group.category}
+              data-reveal
+              style={{ "--i": i } as React.CSSProperties}
+              className="grid gap-2 md:grid-cols-12 md:gap-8"
+            >
+              <dt className="md:col-span-4 lg:col-span-3 font-display font-semibold text-2xl leading-tight">
+                {group.category}
+              </dt>
+              <dd className="md:col-span-8 lg:col-span-9 text-lg leading-relaxed max-w-[64ch]">
+                {group.skills.join(", ")}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

@@ -22,15 +22,6 @@ function Icon({ size = 20, children, ...props }: IconProps) {
   );
 }
 
-export function ArrowDown(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <line x1="12" y1="4" x2="12" y2="20" />
-      <polyline points="6 14 12 20 18 14" />
-    </Icon>
-  );
-}
-
 export function ChevronDown(props: IconProps) {
   return (
     <Icon {...props}>
@@ -55,75 +46,6 @@ export function Download(props: IconProps) {
       <line x1="12" y1="3" x2="12" y2="15" />
       <polyline points="7 10 12 15 17 10" />
       <line x1="4" y1="20" x2="20" y2="20" />
-    </Icon>
-  );
-}
-
-export function Menu(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <line x1="3" y1="6" x2="21" y2="6" />
-      <line x1="3" y1="12" x2="21" y2="12" />
-      <line x1="3" y1="18" x2="21" y2="18" />
-    </Icon>
-  );
-}
-
-export function X(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <line x1="5" y1="5" x2="19" y2="19" />
-      <line x1="19" y1="5" x2="5" y2="19" />
-    </Icon>
-  );
-}
-
-export function Mail(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <rect x="3" y="5" width="18" height="14" />
-      <polyline points="3 6 12 13 21 6" />
-    </Icon>
-  );
-}
-
-export function Code(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <polyline points="9 6 3 12 9 18" />
-      <polyline points="15 6 21 12 15 18" />
-    </Icon>
-  );
-}
-
-export function Layers(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <polygon points="12 3 21 8 12 13 3 8 12 3" />
-      <polyline points="3 15 12 20 21 15" />
-      <polyline points="3 11.5 12 16.5 21 11.5" />
-    </Icon>
-  );
-}
-
-export function Globe(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <circle cx="12" cy="12" r="9" />
-      <line x1="3" y1="12" x2="21" y2="12" />
-      <path d="M12 3c3 3.5 3 14.5 0 18" />
-      <path d="M12 3c-3 3.5-3 14.5 0 18" />
-    </Icon>
-  );
-}
-
-export function Library(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <line x1="4" y1="4" x2="4" y2="20" />
-      <line x1="9" y1="4" x2="9" y2="20" />
-      <line x1="14" y1="6" x2="19" y2="20" />
-      <line x1="19" y1="6" x2="14" y2="20" />
     </Icon>
   );
 }

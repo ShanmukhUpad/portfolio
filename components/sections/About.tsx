@@ -1,156 +1,68 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
-import { ScrollReveal, staggerContainer, staggerItem } from "@/components/ui/ScrollReveal";
-
-function MapPlaceholder() {
-  return (
-    <div
-      className="bg-city-grid"
-      style={{ height: 280, width: "100%", backgroundColor: "var(--color-elevated)" }}
-      aria-hidden
-    />
-  );
-}
 
 const IllinoisMap = dynamic(() => import("@/components/ui/IllinoisMap"), {
   ssr: false,
-  loading: () => <MapPlaceholder />,
+  loading: () => <div className="h-full w-full bg-wash" aria-hidden />,
 });
 
-const INTERESTS = [
-  "AR / VR",
-  "Urban Planning",
-  "GIS",
-  "Computer Vision",
-  "Interactive Computing",
-  "Spatial Analysis",
-  "Database Systems",
-  "Machine Learning",
-  "HCI",
-];
-
-const STATS = [
-  { label: "GPA", value: "3.95 / 4.0" },
-  { label: "Grad", value: "May 2027" },
-  { label: "University", value: "UIUC" },
-  { label: "Major", value: "CS + Geography & GIS" },
-];
+function Mark({ children, tone = 1 }: { children: React.ReactNode; tone?: 1 | 2 | 3 }) {
+  return (
+    <span className="mark" style={{ backgroundColor: `var(--color-mark-${tone})` }}>
+      {children}
+    </span>
+  );
+}
 
 export function About() {
   return (
-    <section
-      id="about"
-      className="relative section-padding overflow-hidden"
-      style={{ backgroundColor: "var(--color-base)" }}
-    >
-      <div className="max-w-6xl mx-auto px-6">
-        <ScrollReveal>
-          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-signal-dim)" }}>
-            01 / about
+    <section id="about" className="section-gap">
+      <div className="frame">
+        <h2 data-reveal className="font-display font-bold text-4xl md:text-5xl tracking-tight mb-10 md:mb-14">
+          About
+        </h2>
+
+        <div
+          data-reveal
+          style={{ "--i": 1 } as React.CSSProperties}
+          className="text-xl leading-[1.3] md:text-2xl md:leading-[1.3] md:columns-2 md:gap-12 hyphens-auto"
+        >
+          <p className="mb-5">
+            <strong className="font-semibold">I&apos;m Shanmukh</strong>, a computer science and geography &amp; GIS
+            student at the University of Illinois Urbana-Champaign, finishing in <Mark>May 2027</Mark> with a{" "}
+            <Mark tone={2}>3.95 GPA</Mark>, then staying for a <Mark tone={3}>Master of Computer Science</Mark>{" "}
+            through May 2028.
           </p>
-          <h2
-            className="font-display font-bold text-3xl sm:text-4xl mb-12"
-            style={{ color: "var(--color-text-primary)" }}
-          >
-            Who I Am
-          </h2>
-        </ScrollReveal>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Text */}
-          <div>
-            <ScrollReveal delay={0.1}>
-              <p className="text-base leading-relaxed mb-6" style={{ color: "var(--color-text-muted)" }}>
-                I&apos;m a computer science + geography & GIS major at the University of Illinois
-                Urbana-Champaign, interested in building software that improves the efficiency of urban systems
-                via computer vision and augmented reality. I also plan to stay at UIUC for a Master of Computer
-                Science, starting in August 2027 and finishing in May 2028.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.2}>
-              <p className="text-base leading-relaxed mb-6" style={{ color: "var(--color-text-muted)" }}>
-                I currently work as a Machine Learning Engineering Intern at the UIUC CyberGIS Lab, where I
-                benchmark and user-test the lab&apos;s geospatial AI agent and help improve how it plans and runs
-                analyses.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.3}>
-              <p className="text-base leading-relaxed mb-6" style={{ color: "var(--color-text-muted)" }}>
-                I was born and raised in Naperville, a suburb of Chicago. Then I attended the University of Illinois Chicago for one year before transferring to University of Illinois Urbana-Champaign in Fall 2025.
-              </p>
-            </ScrollReveal>
-
-            {/* Interest tags */}
-            <ScrollReveal delay={0.35}>
-              <p className="text-xs font-mono mb-3" style={{ color: "var(--color-text-faint)" }}>
-                Interests
-              </p>
-            </ScrollReveal>
-            <motion.div
-              className="flex flex-wrap gap-2"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
+          <p className="mb-5">
+            I grew up in <Mark>Naperville</Mark>, spent a year at UIC in Chicago, and transferred to Urbana in
+            fall 2025. Most of what I build sits where cities meet computers:{" "}
+            <Mark tone={2}>computer vision on aerial imagery</Mark>, spatial statistics on city data, and AR you
+            steer with your hands.
+          </p>
+          <p>
+            Right now I&apos;m a machine learning engineering intern at the <Mark tone={3}>UIUC CyberGIS Lab</Mark>,
+            testing a geospatial AI agent until it fails, then fixing why it did.{" "}
+            <a
+              href="#contact"
+              className="mark link font-medium"
+              style={{ backgroundColor: "var(--color-accent)", color: "var(--color-on-accent)" }}
             >
-              {INTERESTS.map((interest) => (
-                <motion.span
-                  key={interest}
-                  variants={staggerItem}
-                  className="px-3 py-1 text-xs font-mono border"
-                  style={{
-                    borderRadius: 6,
-                    borderColor: "var(--color-signal-dim)",
-                    color: "var(--color-signal)",
-                    backgroundColor: "var(--color-signal-tint)",
-                  }}
-                >
-                  {interest}
-                </motion.span>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Stats + abstract visual */}
-          <div>
-            <ScrollReveal direction="left" delay={0.15}>
-              {/* Stats grid */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {STATS.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="border p-5"
-                    style={{
-                      borderRadius: 8,
-                      backgroundColor: "var(--color-surface)",
-                      borderColor: "var(--color-border)",
-                    }}
-                  >
-                    <p className="text-xs font-mono mb-1" style={{ color: "var(--color-text-faint)" }}>
-                      {stat.label}
-                    </p>
-                    <p
-                      className="font-display font-bold text-xl"
-                      style={{ color: "var(--color-signal)" }}
-                    >
-                      {stat.value}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Illinois map */}
-              <div
-                className="border overflow-hidden"
-                style={{ borderRadius: 8, borderColor: "var(--color-border)", backgroundColor: "var(--color-surface)" }}
-              >
-                <IllinoisMap />
-              </div>
-            </ScrollReveal>
-          </div>
+              If that overlaps with your work, write to me.
+            </a>
+          </p>
         </div>
+
+        <figure className="mt-16 md:mt-24">
+          <div data-shutter>
+            <div className="h-[340px] md:h-[440px] w-full overflow-hidden bg-wash">
+              <IllinoisMap />
+            </div>
+          </div>
+          <figcaption className="mt-3 text-base text-ink-soft">
+            Naperville, Chicago and Urbana: where I grew up, started college, and study now.
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

@@ -1,18 +1,16 @@
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer
-      className="theme-dark border-t py-8"
-      style={{ backgroundColor: "var(--color-elevated)", borderColor: "var(--color-border)" }}
-    >
-      <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p className="text-xs font-mono" style={{ color: "var(--color-text-faint)" }}>
-          © {year} Shanmukh Upadhyayula
+    <footer className="theme-dark overflow-hidden">
+      <div className="frame pt-16 pb-6">
+        <p
+          aria-hidden
+          className="font-display font-bold text-accent select-none"
+          style={{ fontSize: "clamp(2.6rem, 8.2vw, 7.5rem)", lineHeight: 0.9, letterSpacing: "-0.03em" }}
+        >
+          Shanmukh Upadhyayula
         </p>
-        <p className="text-xs font-mono" style={{ color: "var(--color-text-faint)" }}>
-          Built with{" "}
-          <span style={{ color: "var(--color-signal-dim)" }}>Next.js</span>
-        </p>
+        <p className="mt-6 text-[13px] text-ink-soft">© {year} Shanmukh Upadhyayula</p>
       </div>
     </footer>
   );

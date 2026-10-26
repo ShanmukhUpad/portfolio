@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Download, ExternalLink, Github } from "@/components/ui/icons";
 
 export interface ResourceLink {
@@ -21,49 +20,30 @@ function iconFor(link: ResourceLink) {
   return ICONS.external;
 }
 
-const linkClass =
-  "flex items-center gap-1.5 text-xs transition-colors duration-150 hover:text-[var(--color-signal)]";
-const linkStyle = { color: "var(--color-text-muted)" };
-
-/** Row of small labelled resource links (notebook downloads, papers, external views). */
+/** Row of labelled resource links (repos, papers, notebooks, live sites). */
 export function ResourceLinks({ links }: { links?: ResourceLink[] }) {
   if (!links || links.length === 0) return null;
 
   return (
-    <>
-      {links.map((link, i) => {
+    <ul className="flex flex-wrap gap-x-6 gap-y-2">
+      {links.map((link) => {
         const Icon = iconFor(link);
         const isInternal = link.href.startsWith("/");
-
-        if (isInternal) {
-          return (
-            <Link
-              key={i}
-              href={link.href}
-              download={link.download ?? false}
-              className={linkClass}
-              style={linkStyle}
-            >
-              <Icon size={13} />
-              {link.label}
-            </Link>
-          );
-        }
-
         return (
-          <a
-            key={i}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={linkClass}
-            style={linkStyle}
-          >
-            <Icon size={13} />
-            {link.label}
-          </a>
+          <li key={link.href}>
+            <a
+              href={link.href}
+              {...(isInternal
+                ? { download: link.download || undefined }
+                : { target: "_blank", rel: "noopener noreferrer" })}
+              className="link inline-flex items-center gap-1.5 text-base font-medium text-accent"
+            >
+              <Icon size={15} />
+              {link.label}
+            </a>
+          </li>
         );
       })}
-    </>
+    </ul>
   );
 }

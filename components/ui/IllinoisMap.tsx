@@ -13,16 +13,16 @@ export default function IllinoisMap() {
   const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
   return (
-    <div style={{ height: 280, width: "100%" }}>
+    <div style={{ height: "100%", width: "100%" }}>
       <Map
         mapboxAccessToken={token}
         initialViewState={{
-          bounds: [[-91.513, 36.970], [-87.495, 42.508]],
-          fitBoundsOptions: { padding: 16 },
+          bounds: [[-90.6, 39.6], [-86.9, 42.3]],
+          fitBoundsOptions: { padding: 24 },
         }}
         style={{ width: "100%", height: "100%" }}
-        mapStyle="mapbox://styles/mapbox/dark-v11"
-        scrollZoom={true}
+        mapStyle="mapbox://styles/mapbox/light-v11"
+        scrollZoom={false}
         attributionControl={false}
         logoPosition="top-right"
       >
@@ -30,25 +30,10 @@ export default function IllinoisMap() {
         {PINS.map(({ city, lat, lon }) => (
           <Marker key={city} latitude={lat} longitude={lon} anchor="bottom">
             <div className="flex flex-col items-center">
-              <span
-                className="text-[9px] font-mono px-1 rounded mb-0.5"
-                style={{
-                  color: "var(--color-signal)",
-                  backgroundColor: "rgba(0,0,0,0.6)",
-                  whiteSpace: "nowrap",
-                }}
-              >
+              <span className="mb-1 bg-accent px-1.5 py-0.5 text-[13px] font-semibold text-on-accent whitespace-nowrap">
                 {city}
               </span>
-              <div
-                className="rounded-full"
-                style={{
-                  width: 8,
-                  height: 8,
-                  backgroundColor: "var(--color-signal)",
-                  boxShadow: "0 0 6px var(--color-signal)",
-                }}
-              />
+              <div className="h-2.5 w-2.5 rounded-full bg-accent" />
             </div>
           </Marker>
         ))}

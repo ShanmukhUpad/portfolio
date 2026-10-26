@@ -43,3 +43,6 @@ next-env.d.ts
 # claude
 .claude
 portfolio-project/
+
+# design inspector output
+/.taste-skill/

@@ -1,72 +1,49 @@
-import { Mail, Github, Linkedin } from "@/components/ui/icons";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Github, Linkedin } from "@/components/ui/icons";
 
-const LINKS = [
-  {
-    icon: Mail,
-    label: "shanmukh.upad@gmail.com",
-    href: "mailto:shanmukh.upad@gmail.com",
-    display: "Email",
-  },
-  {
-    icon: Github,
-    label: "ShanmukhUpad",
-    href: "https://github.com/ShanmukhUpad",
-    display: "GitHub",
-  },
-  {
-    icon: Linkedin,
-    label: "Shanmukh-Upadhyayula",
-    href: "https://linkedin.com/in/Shanmukh-Upadhyayula",
-    display: "LinkedIn",
-  },
+const EMAIL = "shanmukh.upad@gmail.com";
+
+const SOCIAL = [
+  { icon: Github, label: "GitHub", href: "https://github.com/ShanmukhUpad" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/Shanmukh-Upadhyayula" },
 ];
 
 export function Contact() {
   return (
-    <section
-      id="contact"
-      className="theme-dark section-padding relative overflow-hidden"
-      style={{ backgroundColor: "var(--color-elevated)" }}
-    >
-      <div className="max-w-2xl mx-auto px-6 text-center">
-        <ScrollReveal>
-          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-signal-dim)" }}>
-            06 / contact
-          </p>
-          <h2
-            className="font-display font-bold text-3xl sm:text-4xl mb-4"
-            style={{ color: "var(--color-text-primary)" }}
-          >
-            Get in Touch
-          </h2>
-          <p className="text-base leading-relaxed mb-10" style={{ color: "var(--color-text-muted)" }}>
-            If anything you see on my website catches your attention, reach out.
-          </p>
-        </ScrollReveal>
+    <section id="contact" className="theme-dark flex flex-col lg:min-h-[86svh]">
+      <div className="frame flex flex-1 flex-col pt-24 pb-10 md:pt-32">
+        <h2 data-reveal className="max-w-[24ch] text-xl md:text-2xl leading-snug">
+          Write to me about maps, cities, computer vision, or an internship.
+        </h2>
 
-        <ScrollReveal delay={0.1}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            {LINKS.map(({ icon: Icon, label, href, display }) => (
-              <a
-                key={display}
-                href={href}
-                target={href.startsWith("mailto") ? undefined : "_blank"}
-                rel="noopener noreferrer"
-                className="flex items-center gap-2.5 px-5 py-3 border text-sm transition-colors duration-200 hover:border-[var(--color-signal-dim)] hover:text-[var(--color-signal)]"
-                style={{
-                  borderRadius: 8,
-                  borderColor: "var(--color-border)",
-                  color: "var(--color-text-muted)",
-                  backgroundColor: "var(--color-surface)",
-                }}
-              >
-                <Icon size={14} />
-                <span className="font-mono text-xs">{label}</span>
-              </a>
+        <a
+          href={`mailto:${EMAIL}`}
+          className="lines group mt-auto block pt-20 font-display font-semibold text-ink transition-colors duration-200 hover:text-accent"
+          style={{ fontSize: "clamp(2.6rem, 8.2vw, 7.5rem)", lineHeight: 0.95, letterSpacing: "-0.03em" }}
+        >
+          <span data-reveal className="block">
+            <span className="block md:inline">shanmukh.upad@</span>
+            <span className="block md:inline">gmail.com</span>
+          </span>
+        </a>
+
+        <div className="mt-12 flex flex-col gap-3 text-base md:flex-row md:items-baseline md:justify-between">
+          <p className="text-ink-soft">Urbana, Illinois</p>
+          <ul className="flex gap-6">
+            {SOCIAL.map(({ icon: Icon, label, href }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link inline-flex items-center gap-2 font-medium"
+                >
+                  <Icon size={16} />
+                  {label}
+                </a>
+              </li>
             ))}
-          </div>
-        </ScrollReveal>
+          </ul>
+        </div>
       </div>
     </section>
   );
