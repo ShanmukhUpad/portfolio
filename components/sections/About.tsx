@@ -26,7 +26,24 @@ export function About() {
             staying for a Master of Computer Science through May 2028.
           </p>
           <p className="mb-5">
-            I grew up in Naperville, spent a year at UIC in Chicago, and transferred to Urbana in fall 2025.
+            I was born and raised in Naperville, Illinois, and went to Waubonsie Valley High School. I spent my
+            freshman year at the University of Illinois Chicago studying computer science, starting in fall 2024,
+            then transferred to the University of Illinois Urbana-Champaign in fall 2025 for computer science and
+            GIS.
+          </p>
+          <p className="mb-5">
+            My main interest is computer vision, especially sensor technology and motion control: getting cameras
+            and other sensors to work out where things are and how they move. I&apos;m also drawn to augmented and
+            virtual reality, and to urban planning and geospatial work. Ideally, I want to build software where all
+            of these meet, like a city model you can walk around in and steer with your hands.
+          </p>
+          <p className="mb-5">
+            In my free time, I play music. I&apos;ve played violin for 15 years and sung for 12, and I&apos;m in
+            UIUC&apos;s Video Game Music Club, in both the symphonic and vocal ensembles. I also love video games,
+            especially Super Smash Bros. and Japanese role-playing games. They shaped a lot of my career interests,
+            even though most of those interests have nothing to do with games directly. Outside of that, I enjoy long
+            walks and going to the gym. The walks outdoors made me appreciate geography more, and they&apos;re part of what
+            pushed me toward the GIS side of my major.
           </p>
           <p>
             Right now I&apos;m a machine learning engineering intern at the UIUC CyberGIS Lab, testing a geospatial
