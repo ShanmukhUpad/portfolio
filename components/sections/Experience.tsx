@@ -8,6 +8,8 @@ interface Role {
   bullets: string[];
   tools: string[];
   links?: ResourceLink[];
+  /** Page-relative path under public/, so it resolves under the deploy basePath. */
+  image?: { src: string; alt: string; caption: string; width: number; height: number };
 }
 
 const EXPERIENCES: Role[] = [
@@ -35,6 +37,13 @@ const EXPERIENCES: Role[] = [
       { href: "https://github.com/ShanmukhUpad/semantic-segmentation-feature", label: "GitHub", icon: "github" },
       { href: "/label-free-detection.pdf", label: "Paper", download: true },
     ],
+    image: {
+      src: "projects/segmentation-example.webp",
+      alt: "An aerial image of farmland and a village beside its land-cover label map: fields, roads, buildings and water",
+      caption: "A LoveDA aerial tile and its land-cover labels, the kind of pair the model was trained on.",
+      width: 1560,
+      height: 760,
+    },
     bullets: [
       "Trained a DeepLabV3-ResNet50 semantic segmentation model in PyTorch on aerial imagery, and wrote an IEEE-format paper presented at a CyberGIS talk",
       "Diagnosed failure modes through boundary, class, and confidence analysis, finding 2x lower IoU near class edges and high confidence on misclassified pixels",
@@ -134,6 +143,20 @@ export function Experience() {
                   <div className="mt-3">
                     <ResourceLinks links={exp.links} />
                   </div>
+                )}
+                {exp.image && (
+                  <figure data-shutter className="mt-8 max-w-[72ch]">
+                    {/* eslint-disable-next-line @next/next/no-img-element -- static export, no image optimizer */}
+                    <img
+                      src={exp.image.src}
+                      alt={exp.image.alt}
+                      width={exp.image.width}
+                      height={exp.image.height}
+                      decoding="async"
+                      className="block h-auto w-full"
+                    />
+                    <figcaption className="mt-3 text-base text-ink-soft">{exp.image.caption}</figcaption>
+                  </figure>
                 )}
               </div>
             </li>

@@ -8,6 +8,8 @@ interface Project {
   description: string[];
   tools: string[];
   links?: ResourceLink[];
+  /** Page-relative path under public/, so it resolves under the deploy basePath. */
+  image?: { src: string; alt: string; width: number; height: number };
 }
 
 const PROJECTS: Project[] = [
@@ -22,6 +24,12 @@ const PROJECTS: Project[] = [
       "Calibrating cameras with OpenCV to recover intrinsics within 0.2 px in synthetic tests, the first stage of a phone-video-to-3D-map pipeline",
     ],
     tools: ["C++", "OpenCV", "Eigen", "Python", "Visual odometry", "Multi-view geometry"],
+    image: {
+      src: "projects/street-to-3d-kitti07.webp",
+      alt: "KITTI sequence 07: the estimated camera path from monocular visual odometry plotted against ground truth",
+      width: 1050,
+      height: 1050,
+    },
   },
   {
     title: "Multi-Region Cloud Web Service",
@@ -48,6 +56,12 @@ const PROJECTS: Project[] = [
       { href: "https://shanmukhupad.github.io/Smash-Ultimate-Rankings/", label: "Website", icon: "external" },
       { href: "https://github.com/ShanmukhUpad/Smash-Ultimate-Rankings", label: "GitHub", icon: "github" },
     ],
+    image: {
+      src: "projects/smash-dashboard.webp",
+      alt: "The Comfort vs. Meta dashboard: summary figures and the box plot of tier delta by archetype",
+      width: 1600,
+      height: 1000,
+    },
   },
   {
     title: "Codebase Mapper",
@@ -64,6 +78,12 @@ const PROJECTS: Project[] = [
       { href: "https://codebase-mapper.vercel.app", label: "Website", icon: "external" },
       { href: "https://github.com/ShanmukhUpad/Code-Atlas", label: "GitHub", icon: "github" },
     ],
+    image: {
+      src: "projects/codebase-mapper.webp",
+      alt: "Codebase Mapper showing its own repository as a dependency tree, with a Claude-written explanation of types.ts",
+      width: 1600,
+      height: 1000,
+    },
   },
   {
     title: "Off the Clock: Standalone VR Game",
@@ -168,25 +188,37 @@ const PROJECTS: Project[] = [
   },
 ];
 
+const FEATURED = PROJECTS.filter((p) => p.image);
+const MORE = PROJECTS.filter((p) => !p.image);
+
 export function Projects() {
   return (
     <section id="projects" className="theme-dark section-gap">
       <div className="frame">
-        <div className="mb-12 md:mb-16 flex flex-col gap-3 md:flex-row md:items-baseline md:justify-between">
+        <div className="mb-14 md:mb-20 flex flex-col gap-3 md:flex-row md:items-baseline md:justify-between">
           <h2 data-reveal className="font-display font-bold text-4xl md:text-5xl tracking-tight">
             Projects
           </h2>
           <p data-reveal style={{ "--i": 1 } as React.CSSProperties} className="max-w-[46ch] text-ink-soft">
-            Eleven builds from the last two years. Open any row for what it does and what it measured.
+            Eleven builds from the last two years. The first three are shown in full; open any other row for what
+            it does and what it measured.
           </p>
         </div>
 
+        <div className="flex flex-col gap-20 md:gap-28">
+          {FEATURED.map((p, i) => (
+            <FeaturedProject key={p.title} project={p} flip={i % 2 === 1} />
+          ))}
+        </div>
+
+        <h3 data-reveal className="font-display font-semibold text-2xl mt-24 md:mt-32 mb-4">
+          More projects
+        </h3>
         <div className="ledger">
-          {PROJECTS.map((p, i) => (
+          {MORE.map((p, i) => (
             <details
               key={p.title}
               className="ledger-row"
-              open={i === 0}
               data-reveal
               style={{ "--i": Math.min(i, 6) } as React.CSSProperties}
             >
@@ -223,5 +255,47 @@ export function Projects() {
         </div>
       </div>
     </section>
+  );
+}
+
+/** A project shown in full: its picture on one side, what it does and measured on the other. */
+function FeaturedProject({ project: p, flip }: { project: Project; flip: boolean }) {
+  const image = p.image!;
+  return (
+    <article className="grid gap-8 lg:grid-cols-12 lg:gap-10 lg:items-center">
+      <figure data-shutter className={flip ? "lg:col-span-7 lg:order-2" : "lg:col-span-7"}>
+        {/* eslint-disable-next-line @next/next/no-img-element -- static export, no image optimizer */}
+        <img
+          src={image.src}
+          alt={image.alt}
+          width={image.width}
+          height={image.height}
+          decoding="async"
+          className="block h-auto w-full bg-wash"
+        />
+      </figure>
+
+      <div data-reveal className={flip ? "lg:col-span-5 lg:order-1" : "lg:col-span-5"}>
+        <p className="text-base text-ink-soft">
+          {p.kind} · <span className="tabular">{p.period}</span>
+        </p>
+        <h3 className="mt-2 mb-5 font-display font-semibold text-2xl lg:text-3xl leading-tight tracking-tight">
+          {p.title}
+        </h3>
+        <ul className="flex flex-col gap-2.5 list-disc pl-5 marker:text-accent">
+          {p.description.map((d) => (
+            <li key={d} className="pl-1">
+              {d}
+            </li>
+          ))}
+        </ul>
+        <p className="mt-5 text-base text-ink-soft">{p.tools.join(", ")}</p>
+        {p.links && (
+          <div className="mt-3">
+            <ResourceLinks links={p.links} />
+          </div>
+        )}
+      </div>
+    </article>
   );
 }
