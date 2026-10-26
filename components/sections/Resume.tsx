@@ -6,13 +6,13 @@ import { Download, ExternalLink } from "@/components/ui/icons";
 import { RESUMES } from "@/components/ui/ResumeMenu";
 import { cn } from "@/lib/utils";
 
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-
 export function Resume() {
   const [active, setActive] = useState(0);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const resume = RESUMES[active];
-  const src = `${BASE_PATH}${resume.href}`;
+  // Relative to the page, so it resolves under the deploy's basePath (/portfolio/)
+  // without depending on next.config, which the Pages workflow rewrites.
+  const src = resume.href.slice(1);
 
   const onKeyDown = (e: React.KeyboardEvent) => {
     const step = e.key === "ArrowDown" || e.key === "ArrowRight" ? 1 : e.key === "ArrowUp" || e.key === "ArrowLeft" ? -1 : 0;
@@ -88,13 +88,33 @@ export function Resume() {
           aria-labelledby={`resume-tab-${active}`}
           className="lg:col-span-8"
         >
+          {/* Phones and tablets can't show a PDF inside the page: show page 1 as an image */}
+          <a
+            href={src}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block lg:hidden"
+            aria-label={`Open the ${resume.label} resume`}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element -- static export, no image optimizer */}
+            <img
+              key={resume.preview}
+              src={resume.preview}
+              alt={`First page of the ${resume.label} resume`}
+              width={1275}
+              height={1650}
+              loading="lazy"
+              className="block h-auto w-full bg-white"
+            />
+          </a>
+
           {/* Remount per resume so every browser reloads the embedded document */}
           <object
             key={src}
             data={`${src}#view=FitH&navpanes=0`}
             type="application/pdf"
             aria-label={`${resume.label} resume`}
-            className="block w-full bg-ground h-[70svh] lg:h-auto lg:aspect-[8.5/11] lg:max-h-[88svh]"
+            className="hidden w-full bg-ground lg:block lg:aspect-[8.5/11] lg:max-h-[88svh]"
           >
             <div className="flex h-full min-h-[16rem] flex-col items-start justify-center gap-4 bg-ground p-8">
               <p>This browser can&apos;t show PDFs inline.</p>
