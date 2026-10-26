@@ -1,21 +1,15 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Archivo_Narrow, Public_Sans } from "next/font/google";
+import { Public_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { RevealObserver } from "@/components/ui/RevealObserver";
 
-const archivoNarrow = Archivo_Narrow({
-  variable: "--font-archivo-narrow",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-});
-
 const publicSans = Public_Sans({
   variable: "--font-public-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -56,7 +50,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${archivoNarrow.variable} ${publicSans.variable} h-full antialiased`}
+      className={`${publicSans.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">

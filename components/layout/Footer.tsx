@@ -6,7 +6,7 @@ export function Footer() {
         <p
           aria-hidden
           className="font-display font-bold text-accent select-none"
-          style={{ fontSize: "clamp(2.6rem, 8.2vw, 7.5rem)", lineHeight: 0.9, letterSpacing: "-0.03em" }}
+          style={{ fontSize: "clamp(2.25rem, 6.4vw, 5.75rem)", lineHeight: 1, letterSpacing: "-0.04em" }}
         >
           Shanmukh Upadhyayula
         </p>

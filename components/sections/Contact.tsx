@@ -18,7 +18,7 @@ export function Contact() {
         <a
           href={`mailto:${EMAIL}`}
           className="lines group mt-auto block pt-20 font-display font-semibold text-ink transition-colors duration-200 hover:text-accent"
-          style={{ fontSize: "clamp(2.6rem, 8.2vw, 7.5rem)", lineHeight: 0.95, letterSpacing: "-0.03em" }}
+          style={{ fontSize: "clamp(2.25rem, 6.4vw, 5.75rem)", lineHeight: 1, letterSpacing: "-0.04em" }}
         >
           <span data-reveal className="block">
             <span className="block md:inline">shanmukh.upad@</span>

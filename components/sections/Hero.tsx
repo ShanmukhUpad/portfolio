@@ -7,7 +7,7 @@ export function Hero() {
         {/* Each line is authored so it can rise from behind its own baseline */}
         <h1
           className="lines font-display font-bold text-ink"
-          style={{ fontSize: "clamp(4.25rem, 16.4vw, 15rem)", lineHeight: 0.86, letterSpacing: "-0.035em" }}
+          style={{ fontSize: "clamp(3.25rem, 12.6vw, 12rem)", lineHeight: 0.92, letterSpacing: "-0.045em" }}
         >
           <span className="line">
             <span data-line style={{ "--i": 0 } as React.CSSProperties}>

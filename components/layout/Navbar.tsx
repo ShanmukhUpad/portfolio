@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Download } from "@/components/ui/icons";
-import { ResumeMenu, RESUMES } from "@/components/ui/ResumeMenu";
+import { RESUMES } from "@/components/ui/ResumeMenu";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { cn } from "@/lib/utils";
 
@@ -17,7 +17,7 @@ const NAV_LINKS = [
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const activeId = useActiveSection(NAV_LINKS.map((l) => l.id));
+  const activeId = useActiveSection([...NAV_LINKS.map((l) => l.id), "resume"]);
 
   return (
     <header className="theme-dark fixed top-0 left-0 right-0 z-50">
@@ -37,7 +37,9 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
-          <ResumeMenu className="ml-2" />
+          <a href="#resume" className="button ml-2">
+            Resume
+          </a>
         </div>
 
         <button
@@ -67,7 +69,17 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-            <p className="mt-6 mb-2 text-base text-ink-soft">Resume</p>
+            <a
+              href="#resume"
+              className={cn(
+                "py-3 font-display text-3xl font-semibold",
+                activeId === "resume" ? "text-ink" : "text-ink-soft"
+              )}
+              onClick={() => setMobileOpen(false)}
+            >
+              Resume
+            </a>
+            <p className="mt-6 mb-2 text-base text-ink-soft">Download</p>
             {RESUMES.map((resume) => (
               <Link
                 key={resume.href}

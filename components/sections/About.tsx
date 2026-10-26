@@ -7,14 +7,6 @@ const IllinoisMap = dynamic(() => import("@/components/ui/IllinoisMap"), {
   loading: () => <div className="h-full w-full bg-wash" aria-hidden />,
 });
 
-function Mark({ children, tone = 1 }: { children: React.ReactNode; tone?: 1 | 2 | 3 }) {
-  return (
-    <span className="mark" style={{ backgroundColor: `var(--color-mark-${tone})` }}>
-      {children}
-    </span>
-  );
-}
-
 export function About() {
   return (
     <section id="about" className="section-gap">
@@ -26,27 +18,24 @@ export function About() {
         <div
           data-reveal
           style={{ "--i": 1 } as React.CSSProperties}
-          className="text-xl leading-[1.3] md:text-2xl md:leading-[1.3] md:columns-2 md:gap-12 hyphens-auto"
+          className="text-xl leading-[1.35] md:text-2xl md:columns-2 md:gap-12"
         >
           <p className="mb-5">
             <strong className="font-semibold">I&apos;m Shanmukh</strong>, a computer science and geography &amp; GIS
-            student at the University of Illinois Urbana-Champaign, finishing in <Mark>May 2027</Mark> with a{" "}
-            <Mark tone={2}>3.95 GPA</Mark>, then staying for a <Mark tone={3}>Master of Computer Science</Mark>{" "}
-            through May 2028.
+            student at the University of Illinois Urbana-Champaign, finishing in May 2027 with a 3.95 GPA, then
+            staying for a Master of Computer Science through May 2028.
           </p>
           <p className="mb-5">
-            I grew up in <Mark>Naperville</Mark>, spent a year at UIC in Chicago, and transferred to Urbana in
-            fall 2025. Most of what I build sits where cities meet computers:{" "}
-            <Mark tone={2}>computer vision on aerial imagery</Mark>, spatial statistics on city data, and AR you
-            steer with your hands.
+            I grew up in Naperville, spent a year at UIC in Chicago, and transferred to Urbana in fall 2025. Most of
+            what I build sits where cities meet computers: computer vision on aerial imagery, spatial statistics on
+            city data, and AR you steer with your hands.
           </p>
           <p>
-            Right now I&apos;m a machine learning engineering intern at the <Mark tone={3}>UIUC CyberGIS Lab</Mark>,
-            testing a geospatial AI agent until it fails, then fixing why it did.{" "}
+            Right now I&apos;m a machine learning engineering intern at the UIUC CyberGIS Lab, testing a geospatial
+            AI agent until it fails, then fixing why it did.{" "}
             <a
               href="#contact"
-              className="mark link font-medium"
-              style={{ backgroundColor: "var(--color-accent)", color: "var(--color-on-accent)" }}
+              className="font-medium text-accent underline decoration-[0.07em] underline-offset-[0.2em]"
             >
               If that overlaps with your work, write to me.
             </a>

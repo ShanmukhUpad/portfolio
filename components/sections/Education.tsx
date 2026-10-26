@@ -43,7 +43,7 @@ export function Education() {
             <div key={f.figure} data-reveal style={{ "--i": i + 2 } as React.CSSProperties}>
               <p
                 className="tabular font-display font-bold text-accent"
-                style={{ fontSize: "clamp(3.5rem, 8.2vw, 7.5rem)", lineHeight: 0.9, letterSpacing: "-0.03em" }}
+                style={{ fontSize: "clamp(3.5rem, 6.4vw, 5.75rem)", lineHeight: 1, letterSpacing: "-0.04em" }}
               >
                 {f.figure}
               </p>

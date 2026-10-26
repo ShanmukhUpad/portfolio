@@ -6,9 +6,21 @@ import { ChevronDown, Download } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
 
 export const RESUMES = [
-  { label: "Computer Vision & ML", href: "/ShanmukhUpadhyayula-Resume-CV.pdf" },
-  { label: "Software Engineering & Cloud", href: "/ShanmukhUpadhyayula-Resume-SWE.pdf" },
-  { label: "GIS & Spatial Data Science", href: "/ShanmukhUpadhyayula-Resume-GIS.pdf" },
+  {
+    label: "Computer Vision & ML",
+    href: "/ShanmukhUpadhyayula-Resume-CV.pdf",
+    note: "For computer vision, machine learning and research roles.",
+  },
+  {
+    label: "Software Engineering & Cloud",
+    href: "/ShanmukhUpadhyayula-Resume-SWE.pdf",
+    note: "For software engineering, backend and cloud roles.",
+  },
+  {
+    label: "GIS & Spatial Data Science",
+    href: "/ShanmukhUpadhyayula-Resume-GIS.pdf",
+    note: "For GIS, spatial analysis and data science roles.",
+  },
 ];
 
 interface ResumeMenuProps {

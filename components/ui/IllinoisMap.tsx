@@ -22,7 +22,7 @@ export default function IllinoisMap() {
         }}
         style={{ width: "100%", height: "100%" }}
         mapStyle="mapbox://styles/mapbox/light-v11"
-        scrollZoom={false}
+        scrollZoom={true}
         attributionControl={false}
         logoPosition="top-right"
       >

@@ -11,14 +11,11 @@
   --color-accent-strong: #4f3a8a;
   --color-on-accent: #ffffff;
 
-  /* Highlighter tints for marked words in running text */
-  --color-mark-1: #e4dafa;
-  --color-mark-2: #d6c8f5;
-  --color-mark-3: #f0e9ff;
+  --color-selection: #d6c8f5;
 
   /* Fonts */
   --font-sans: var(--font-public-sans), system-ui, sans-serif;
-  --font-display: var(--font-archivo-narrow), var(--font-public-sans), sans-serif;
+  --font-display: var(--font-public-sans), system-ui, sans-serif;
 
   /* Motion */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -56,7 +53,7 @@ body {
 }
 
 ::selection {
-  background: var(--color-mark-2);
+  background: var(--color-selection);
   color: #201638;
 }
 
@@ -94,14 +91,6 @@ body {
     .section-gap {
       padding-block: 9rem;
     }
-  }
-
-  /* Highlighter marks in running text */
-  .mark {
-    padding-inline: 0.1em;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-    color: #201638;
   }
 }
 
