@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { ChevronDown, Download } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
 
@@ -66,7 +67,7 @@ export function ResumeMenu({ label = "Resume", placement = "down", className }: 
           style={{ "--menu-shift": up ? "6px" : "-6px" } as React.CSSProperties}
         >
           {RESUMES.map((resume) => (
-            <a
+            <Link
               key={resume.href}
               href={resume.href}
               download
@@ -76,7 +77,7 @@ export function ResumeMenu({ label = "Resume", placement = "down", className }: 
             >
               {resume.label}
               <Download size={16} />
-            </a>
+            </Link>
           ))}
         </div>
       )}

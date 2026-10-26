@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Download } from "@/components/ui/icons";
 import { ResumeMenu, RESUMES } from "@/components/ui/ResumeMenu";
 import { useActiveSection } from "@/hooks/useActiveSection";
@@ -68,7 +69,7 @@ export function Navbar() {
             ))}
             <p className="mt-6 mb-2 text-base text-ink-soft">Resume</p>
             {RESUMES.map((resume) => (
-              <a
+              <Link
                 key={resume.href}
                 href={resume.href}
                 download
@@ -77,7 +78,7 @@ export function Navbar() {
               >
                 {resume.label}
                 <Download size={16} />
-              </a>
+              </Link>
             ))}
           </div>
         </div>
