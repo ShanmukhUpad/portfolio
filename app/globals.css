@@ -172,6 +172,20 @@ body {
   transition: color var(--t-hover) ease;
 }
 
+/* Hero network: the finished, static look */
+.node-graph line {
+  stroke: var(--color-accent);
+  stroke-width: 1;
+  opacity: 0.22;
+}
+.node-graph circle {
+  fill: var(--color-accent);
+  opacity: 0.45;
+}
+.node-graph circle.is-hub {
+  opacity: 0.75;
+}
+
 /* ---- Motion layer. Hidden starting states live only behind html.js and no-preference,
    so the reduced-motion and no-script page is the finished page. ---- */
 
@@ -215,6 +229,29 @@ body {
   }
   .js [data-shutter].is-in > * {
     clip-path: inset(0);
+  }
+
+  /* Edges draw in one after another, then the nodes fade up to their resting opacity */
+  .js .node-graph line {
+    stroke-dasharray: 1;
+    animation: edge-draw 1200ms var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * 40ms);
+  }
+  .js .node-graph circle {
+    animation: node-in 500ms var(--ease-out) both;
+    animation-delay: calc(600ms + var(--i, 0) * 30ms);
+  }
+}
+
+@keyframes edge-draw {
+  from {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+}
+@keyframes node-in {
+  from {
+    opacity: 0;
   }
 }
 

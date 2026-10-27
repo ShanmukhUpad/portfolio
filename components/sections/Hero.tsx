@@ -1,7 +1,10 @@
+import { NodeGraph } from "@/components/svg/NodeGraph";
+
 export function Hero() {
   return (
-    <section id="top" className="theme-dark">
-      <div className="frame grid items-center gap-10 pt-28 pb-16 md:grid-cols-12 md:gap-12 md:pt-36 md:pb-24">
+    <section id="top" className="theme-dark relative overflow-hidden">
+      <NodeGraph />
+      <div className="frame relative grid items-center gap-10 pt-28 pb-16 md:grid-cols-12 md:gap-12 md:pt-36 md:pb-24">
         {/* Each line is authored so it can rise from behind its own baseline */}
         <h1
           className="lines font-display font-bold text-ink md:col-span-8"
