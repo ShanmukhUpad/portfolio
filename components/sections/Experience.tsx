@@ -87,11 +87,11 @@ const EXPERIENCES: Role[] = [
       "Kept models and maps current with a live SODA API data pipeline",
     ],
     image: {
-      src: "projects/pathway-lisa.webp",
-      alt: "The dashboard's spatial autocorrelation panel: Moran's I of 0.31, a Moran scatterplot and a LISA cluster map of Chicago community areas",
-      caption: "The dashboard's crime hot-spot analysis: global Moran's I and a LISA cluster map of Chicago.",
+      src: "projects/pathway-forecast.webp",
+      alt: "The dashboard's Public Safety tab: monthly theft counts for Austin, Chicago, and a Ridge regression forecast of 78 thefts for November 2026",
+      caption: "The Public Safety tab: Austin's monthly theft counts and next month's forecast.",
       width: 1600,
-      height: 1150,
+      height: 773,
     },
   },
   {
