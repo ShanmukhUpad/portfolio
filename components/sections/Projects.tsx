@@ -292,7 +292,7 @@ function FeaturedProject({ project: p, flip }: { project: Project; flip: boolean
   const image = p.image!;
   return (
     <article className="grid gap-8 lg:grid-cols-12 lg:gap-10 lg:items-center">
-      <figure data-shutter className={flip ? "lg:col-span-7 lg:order-2" : "lg:col-span-7"}>
+      <figure className={flip ? "lg:col-span-7 lg:order-2" : "lg:col-span-7"}>
         {/* eslint-disable-next-line @next/next/no-img-element -- static export, no image optimizer */}
         <img
           src={image.src}

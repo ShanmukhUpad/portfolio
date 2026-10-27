@@ -2,10 +2,10 @@
 
 import { useEffect } from "react";
 
-/** Adds `is-in` to every [data-reveal] / [data-shutter] element once it enters the viewport. */
+/** Adds `is-in` to every [data-reveal] element once it enters the viewport. */
 export function RevealObserver() {
   useEffect(() => {
-    const targets = document.querySelectorAll("[data-reveal], [data-shutter]");
+    const targets = document.querySelectorAll("[data-reveal]");
     if (!("IntersectionObserver" in window)) {
       targets.forEach((el) => el.classList.add("is-in"));
       return;

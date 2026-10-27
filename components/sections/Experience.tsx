@@ -166,7 +166,7 @@ export function Experience() {
                   </div>
                 )}
                 {exp.image && (
-                  <figure data-shutter className="mt-8 max-w-[72ch]">
+                  <figure className="mt-8 max-w-[72ch]">
                     {/* eslint-disable-next-line @next/next/no-img-element -- static export, no image optimizer */}
                     <img
                       src={exp.image.src}

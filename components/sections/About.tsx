@@ -58,10 +58,8 @@ export function About() {
         </div>
 
         <figure className="mt-16 md:mt-24">
-          <div data-shutter>
-            <div className="h-[340px] md:h-[440px] w-full overflow-hidden bg-wash">
-              <IllinoisMap />
-            </div>
+          <div className="h-[340px] md:h-[440px] w-full overflow-hidden bg-wash">
+            <IllinoisMap />
           </div>
           <figcaption className="mt-3 text-base text-ink-soft">
             Naperville, Chicago and Urbana: where I grew up, started college, and study now.
