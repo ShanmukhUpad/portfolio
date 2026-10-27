@@ -1,9 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { Download } from "@/components/ui/icons";
-import { RESUMES } from "@/components/ui/ResumeMenu";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { cn } from "@/lib/utils";
 
@@ -22,8 +19,10 @@ export function Navbar() {
   return (
     <header className="theme-dark fixed top-0 left-0 right-0 z-50">
       <nav className="frame flex items-center justify-between h-16">
-        <a href="#top" className="link font-display font-semibold text-lg tracking-tight whitespace-nowrap">
-          Shanmukh Upadhyayula
+        <a href="#top" aria-label="Back to top" className="shrink-0 transition-opacity hover:opacity-80">
+          {/* The site favicon; relative so it resolves under the deploy's basePath */}
+          {/* eslint-disable-next-line @next/next/no-img-element -- static export, no image optimizer */}
+          <img src="favicon.ico" alt="" width={36} height={36} className="block size-9" />
         </a>
 
         <div className="hidden lg:flex items-center gap-7">
@@ -79,19 +78,6 @@ export function Navbar() {
             >
               Resume
             </a>
-            <p className="mt-6 mb-2 text-base text-ink-soft">Download</p>
-            {RESUMES.map((resume) => (
-              <Link
-                key={resume.href}
-                href={resume.href}
-                download
-                className="flex items-center justify-between py-2.5 text-base text-ink"
-                onClick={() => setMobileOpen(false)}
-              >
-                {resume.label}
-                <Download size={16} />
-              </Link>
-            ))}
           </div>
         </div>
       )}

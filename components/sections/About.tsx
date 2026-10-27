@@ -21,7 +21,7 @@ export function About() {
           className="text-xl leading-[1.35] md:text-2xl md:columns-2 md:gap-12"
         >
           <p className="mb-5">
-            <strong className="font-semibold">I&apos;m Shanmukh</strong>, a computer science and geography &amp; GIS
+            I&apos;m Shanmukh, a computer science and geography &amp; GIS
             student at the University of Illinois Urbana-Champaign, finishing in May 2027 with a 3.95 GPA, then
             staying for a Master of Computer Science through May 2028.
           </p>

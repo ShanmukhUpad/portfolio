@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { Download, ExternalLink } from "@/components/ui/icons";
-import { RESUMES } from "@/components/ui/ResumeMenu";
+import { RESUMES } from "@/lib/resumes";
 import { cn } from "@/lib/utils";
 
 export function Resume() {
