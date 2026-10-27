@@ -87,11 +87,11 @@ const EXPERIENCES: Role[] = [
       "Kept models and maps current with a live SODA API data pipeline",
     ],
     image: {
-      src: "projects/pathway-forecast.webp",
-      alt: "The dashboard's Public Safety tab: monthly theft counts for Austin, Chicago, and a Ridge regression forecast of 78 thefts for November 2026",
-      caption: "The Public Safety tab: Austin's monthly theft counts and next month's forecast.",
+      src: "projects/pathway-hardship.webp",
+      alt: "Two maps of Chicago community areas colored by predicted hardship index, one from a random forest and one from gradient boosting, both darkest on the West and South Sides",
+      caption: "Hardship index predicted for all 77 community areas. Cross-validated R² of 0.95 (random forest) and 0.96 (gradient boosting), off by about 4.5 points on a 1–100 scale.",
       width: 1600,
-      height: 773,
+      height: 720,
     },
   },
   {
