@@ -111,10 +111,10 @@ const EXPERIENCES: Role[] = [
     ],
     image: {
       src: "projects/digital-diary.webp",
-      alt: "Digital Diary's journal page with mood-tagged entries and a calendar of days with entries",
-      caption: "The journal view, shown with sample entries on a local copy.",
+      alt: "Digital Diary's guided entry page detecting a smile from the webcam and suggesting the Fantastic mood",
+      caption: "Face mode reading a smile from the webcam and proposing a mood to confirm.",
       width: 1600,
-      height: 1000,
+      height: 870,
     },
   },
   {
